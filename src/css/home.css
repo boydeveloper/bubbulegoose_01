@@ -24,6 +24,7 @@
   color: var(--white-color);
   padding: 1.3rem 11.7rem;
   font-size: 3.2rem;
+  text-decoration: none;
   transition: transform 0.3s;
   display: inline-block;
   border-radius: 9px;
