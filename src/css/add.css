@@ -1,0 +1,71 @@
+.Addart-box {
+  /* text-align: center; */
+  padding: 3.2rem 0 6.8rem 0;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.add-heading {
+  font-size: 6rem;
+  color: var(--primary-color);
+}
+.text-center {
+  text-align: center;
+}
+.form-add {
+  /* max-width: 35rem; */
+  /* mar; */
+}
+.add-subtext {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+.details label {
+  font-size: 3.2rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.details input {
+  /* padding: 1.7rem; */
+  width: 100%;
+  background: #ff77f7;
+  border: 0.2rem solid #000000;
+  border-radius: 1rem;
+  padding: 1.6rem 2rem;
+  margin-bottom: 3rem;
+  color: var(--white-color);
+  max-width: 60rem;
+  font-size: 2.4rem;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  /* display: block; */
+}
+.details input::placeholder {
+  text-shadow: none;
+  color: var(--white-color);
+}
+/* .details */
+.file label {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+.input-add {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 1.7rem 2rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  border: 0.2rem solid #000000;
+}
+.btn-upload {
+  width: 100%;
+  font-size: 3.2rem;
+  padding: 1.6rem 2rem;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  border: 0.2rem solid #000000;
+  color: var(--white-color);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.file {
+  margin-bottom: 2rem;
+}

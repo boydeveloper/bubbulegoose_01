@@ -1,0 +1,132 @@
+@media (max-width: 1125px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 1020px) {
+  .login-form,
+  .sign-form {
+    flex-direction: column;
+  }
+  .form-box input {
+    max-width: 100%;
+  }
+  .login-btn {
+    max-width: 100%;
+  }
+  .img {
+    display: none;
+  }
+}
+@media (max-width: 945px) {
+  .hero-landing {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+  .hero-section {
+    padding: 4.8rem 0;
+  }
+  .heading-primary {
+    font-size: 6rem;
+  }
+  .grid--3--cols {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6rem;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .close-btn {
+    display: none;
+  }
+  .nav-links {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: var(--primary-color);
+    align-items: flex-end;
+    height: 100vh;
+    width: 60%;
+    z-index: 99;
+    margin-top: 9rem;
+
+    padding: 2rem 4rem;
+    transition: all ease 0.3s;
+  }
+
+  .nav-open .nav-links {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    pointer-events: auto;
+    flex-direction: column;
+  }
+  .nav-open .close-btn {
+    display: block;
+  }
+  .nav-open .bar-btn {
+    display: none;
+  }
+}
+@media (max-width: 577px) {
+  .heading-primary {
+    font-size: 5rem;
+  }
+  .grid--3--cols {
+    grid-template-columns: 1fr;
+  }
+  .image-boxes {
+    width: 100%;
+    max-width: 100%;
+  }
+  .card-img {
+    /* max-width: 100%; */
+    height: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .nav-brand {
+    font-size: 2.6rem;
+  }
+  .container {
+    padding: 0 2.8rem;
+  }
+  .hero-btn:link,
+  .hero-btn:visited {
+    padding: 1.3rem 7rem;
+  }
+  .heading-primary {
+    font-size: 4rem;
+  }
+  .hero-text {
+    font-size: 2rem;
+  }
+  .section-heading {
+    font-size: 4.8rem;
+  }
+  .add-heading {
+    font-size: 4.4rem;
+  }
+  .gallery-heading {
+    font-size: 4.8rem;
+  }
+  .add-subtext {
+    font-size: 2.4rem;
+  }
+  .search-box {
+    padding: 1.5rem;
+  }
+  .pageHeader {
+    font-size: 2.6rem;
+  }
+  .logout {
+    padding: 1.6rem 2.5rem;
+  }
+}

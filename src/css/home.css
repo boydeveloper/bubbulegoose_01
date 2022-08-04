@@ -1,0 +1,46 @@
+.hero-landing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+.text-box {
+  padding-top: 2.2rem;
+}
+.hero-image {
+  width: 100%;
+}
+.heading-primary {
+  font-size: 7rem;
+  color: var(--primary-color);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.hero-text {
+  font-size: 2.8rem;
+  margin-bottom: 1.4rem;
+}
+.hero-btn:link,
+.hero-btn:visited {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 1.3rem 11.7rem;
+  font-size: 3.2rem;
+  transition: transform 0.3s;
+  display: inline-block;
+  border-radius: 9px;
+}
+.hero-btn:hover,
+.hero-btn:active {
+  transform: scale(1.05);
+}
+.section-heading {
+  font-size: 6.8rem;
+  color: var(--primary-color);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.section-subtext {
+  font-size: 2.4rem;
+}
+#carousel {
+  width: 100%;
+  height: 100%;
+}

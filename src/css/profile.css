@@ -1,0 +1,83 @@
+.profile {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 3.2rem 0;
+}
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pageHeader {
+  font-size: 4rem;
+  color: var(--primary-color);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.logout {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 1.3rem 4rem;
+  font-size: 2.2rem;
+  transition: transform 0.3s;
+  display: inline-block;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  border: 0.2rem var(--black-color) solid;
+  border-radius: 9px;
+}
+.logout:hover,
+.logout:active {
+  transform: scale(1.05);
+}
+
+main {
+  border-radius: 2rem;
+  max-width: 60rem;
+  padding: 2rem 4rem;
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffc9fc;
+  margin: 4rem auto;
+}
+.profileDetailsHeader {
+  display: flex;
+  align-items: center;
+
+  /* padding: 2.5rem 0; */
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.profileCard {
+  margin: 0 auto;
+  /* padding: 3rem 2.3rem; */
+}
+
+.profileDetailsText {
+  font-size: 2.5rem;
+  color: var(--white-color);
+  text-shadow: -2px 0 var(--primary-color), 0 2px var(--primary-color),
+    2px 0 var(--primary-color), 0 -2px var(--primary-color);
+}
+.changePersonalDetails {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.profileCard input {
+  width: 100%;
+  padding: 1.2rem 1rem;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  transition: all 0.1s;
+}
+.profileCard input:focus {
+  border: 0.2rem solid var(--primary-color);
+
+  outline: none;
+}
+.form input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
