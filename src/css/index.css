@@ -16,8 +16,9 @@ html {
 
 body {
   color: var(--black-color);
-  font-family: 'Knicknack';
+  font-family: 'Knicknack', serif;
   overflow-x: hidden;
+  background-color: #fff;
 }
 
 .header {
