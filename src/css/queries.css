@@ -8,11 +8,10 @@
   .sign-form {
     flex-direction: column;
   }
-  .form-box input {
-    max-width: 100%;
-  }
+
   .login-btn {
-    max-width: 100%;
+    max-width: none;
+    width: 100%;
   }
   .img {
     display: none;
@@ -54,7 +53,6 @@
     width: 60%;
     z-index: 99;
     margin-top: 9rem;
-
     padding: 2rem 4rem;
     transition: all ease 0.3s;
   }
@@ -92,12 +90,13 @@
   }
 }
 @media (max-width: 500px) {
+  .hero-section {
+    padding: 2.4rem 0;
+  }
   .nav-brand {
     font-size: 2.6rem;
   }
-  .container {
-    padding: 0 2.8rem;
-  }
+
   .hero-btn:link,
   .hero-btn:visited {
     padding: 1.3rem 7rem;

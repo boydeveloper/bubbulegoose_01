@@ -16,9 +16,10 @@ function Gallery() {
         snapshot.docs.forEach((doc) => {
           cards.push({ ...doc.data(), id: doc.id });
         });
-        setCards(cards);
 
-        console.log(cards);
+        setCards(
+          cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
+        );
         setLoading(false);
       })
       .catch((err) => {
@@ -34,13 +35,8 @@ function Gallery() {
 
           <form action="#">
             <div className="search-box">
-              <button>
-                <FaSearch
-                  color="white"
-                  fontSize="2rem"
-                  className="search-icon"
-                />
-              </button>
+              <FaSearch fontSize="2rem" color="#fff" />
+
               <input
                 type="text"
                 name=""

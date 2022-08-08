@@ -20,16 +20,13 @@
   font-size: 3.2rem;
 }
 .form-box input {
-  width: 100%;
   background: #ff77f7;
   border: 0.2rem solid #000000;
   border-radius: 1rem;
   padding: 1.6rem 2rem;
   margin-bottom: 3rem;
   color: #fff;
-  max-width: 37rem;
   font-size: 2.4rem;
-  /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
 }
 .form-box input::placeholder {
   color: var(--white-color);
@@ -37,7 +34,6 @@
   text-shadow: none;
 }
 .img-box {
-  /* width: 100%; */
   padding-top: 2rem;
   padding-left: 4rem;
   margin-left: 4rem;
@@ -49,7 +45,7 @@
   padding: 1.7rem 2rem;
   font-size: 3.6rem;
   border-radius: 12px;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-weight: 900;
   color: var(--white-color);
   border: 0.2rem solid #000;
   margin-top: 3rem;

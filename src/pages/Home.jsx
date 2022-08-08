@@ -4,32 +4,34 @@ import { useState, useEffect } from 'react';
 import { db } from '../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
+import art2 from '../img/art2.png';
+import art1 from '../img/art1.png';
+import art3 from '../img/art3.png';
 import carouselImg from '../img/crarouselimg.png';
 import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
 
 function Home() {
-  const colref = collection(db, 'cards');
-  const [cards, setCards] = useState(null);
+  // const colref = collection(db, 'cards');
+  // const [cards, setCards] = useState(null);
 
-  useEffect(() => {
-    getDocs(colref)
-      .then((snapshot) => {
-        let cards = [];
-        snapshot.docs.forEach((doc) => {
-          cards.push({ ...doc.data(), id: doc.id });
-        });
-        setCards(cards);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [colref, cards]);
+  // useEffect(() => {
+  //   getDocs(colref)
+  //     .then((snapshot) => {
+  //       let cards = [];
+  //       snapshot.docs.forEach((doc) => {
+  //         cards.push({ ...doc.data(), id: doc.id });
+  //       });
+  //       setCards(cards);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [colref, cards]);
 
   return (
     <>
-      <header className="header"></header>
       <section className="hero-section">
         <div className="container">
           <div className="hero-landing">
@@ -72,14 +74,51 @@ function Home() {
       </section>
       <section className="section-mirrors">
         <div className="container">
-          <h2 className="section-heading">Babbers mirror</h2>
-          <p className="section-subtext">Look at the ballers menu</p>
-
+          <p className="section-subtext">Recent Uploads</p>
           <div className="grid--3--cols" id="image-container">
-            {cards && <ListingItem cards={cards} />}
-          </div>
-          <div className="align-center">
-            <p className="rights">Powered by Akere.eth & Onazi.G</p>
+            {/* <ListingItem card={cards} /> */}
+            <div className="image-boxes">
+              <img src={art1} alt="art 1" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
+            <div className="image-boxes">
+              <img src={art2} alt="" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
+            <div className="image-boxes">
+              <img src={art3} alt="art image" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
+            <div className="image-boxes">
+              <img src={art1} alt="art image" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
+            <div className="image-boxes">
+              <img src={art2} alt="art 1" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
+            <div className="image-boxes">
+              <img src={art3} alt="" className="card-img" />
+              <div className="id">
+                <h3>ALLMIGHTO#2879</h3>
+                <p>@weirdstoner_eth</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

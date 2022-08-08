@@ -10,13 +10,13 @@
   width: 100%;
 }
 .heading-primary {
-  font-size: 7rem;
+  font-size: 6.2rem;
   color: var(--primary-color);
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .hero-text {
   font-size: 2.8rem;
   margin-bottom: 1.4rem;
+  font-weight: 600;
 }
 .hero-btn:link,
 .hero-btn:visited {
@@ -36,10 +36,10 @@
 .section-heading {
   font-size: 6.8rem;
   color: var(--primary-color);
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .section-subtext {
   font-size: 2.4rem;
+  margin-bottom: 2rem;
 }
 #carousel {
   width: 100%;

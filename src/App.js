@@ -13,7 +13,6 @@ import Adding from './pages/Adding';
 import ForgotPassword from './pages/ForgotPassword';
 import Navbar from './components/Navbar';
 import Card from './pages/Card';
-import { Divider } from 'react-daisyui';
 
 function App() {
   const [preloader, setPreloader] = useState(false);

@@ -11,16 +11,15 @@
 .pageHeader {
   font-size: 4rem;
   color: var(--primary-color);
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .logout {
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 1.3rem 4rem;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   transition: transform 0.3s;
   display: inline-block;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-weight: 900;
   border: 0.2rem var(--black-color) solid;
   border-radius: 9px;
 }
@@ -40,14 +39,11 @@ main {
 .profileDetailsHeader {
   display: flex;
   align-items: center;
-
-  /* padding: 2.5rem 0; */
   margin: 0 auto;
   justify-content: space-between;
 }
 .profileCard {
   margin: 0 auto;
-  /* padding: 3rem 2.3rem; */
 }
 
 .profileDetailsText {
@@ -66,14 +62,13 @@ main {
   padding: 1.2rem 1rem;
   font-size: 2.2rem;
   color: #fff;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
   margin-bottom: 2rem;
   border-radius: 1rem;
   transition: all 0.1s;
 }
 .profileCard input:focus {
   border: 0.2rem solid var(--primary-color);
-
   outline: none;
 }
 .form input {

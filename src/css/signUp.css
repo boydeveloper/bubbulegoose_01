@@ -1,4 +1,5 @@
 .sign-form {
   display: flex;
   padding: 3.2rem 0;
+  max-width: 130rem;
 }
