@@ -30,7 +30,7 @@
   }
   .grid--3--cols {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 6rem;
+    row-gap: 2rem;
   }
   .menu-btn {
     display: block;
@@ -90,6 +90,9 @@
   }
 }
 @media (max-width: 500px) {
+  html {
+    font-size: 42%;
+  }
   .hero-section {
     padding: 2.4rem 0;
   }

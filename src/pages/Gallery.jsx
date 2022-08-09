@@ -9,6 +9,8 @@ function Gallery() {
   const colref = collection(db, 'cards');
   const [cards, setCards] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+
   useEffect(() => {
     getDocs(colref)
       .then((snapshot) => {
@@ -33,7 +35,7 @@ function Gallery() {
         <div className="gallery-header">
           <div className="gallery-heading">BALLERS CLUB</div>
 
-          <form action="#">
+          <form>
             <div className="search-box">
               <FaSearch fontSize="2rem" color="#fff" />
 
@@ -41,6 +43,9 @@ function Gallery() {
                 type="text"
                 name=""
                 id=""
+                value={search}
+                disabled
+                onChange={(e) => setSearch(e.target.value)}
                 className="search"
                 placeholder="Search for dicord id"
               />
@@ -48,17 +53,21 @@ function Gallery() {
           </form>
         </div>
       </div>
-
-      <section className="section-mirrors">
-        <div className="container">
-          <p className="section-subtext">Recent Uploads</p>
-          <div className="grid--3--cols" id="image-container">
-            {loading && <Spinner />}
-            {cards && <ListingItem cards={cards} />}
-          </div>
+      {cards?.length === 0 ? (
+        <div className="error">
+          <h1>Arts not Found</h1>
         </div>
-      </section>
-
+      ) : (
+        <section className="section-mirrors">
+          <div className="container">
+            <p className="section-subtext">Recent Uploads</p>
+            <div className="grid--3--cols" id="image-container">
+              {loading && <Spinner />}
+              {cards && <ListingItem cards={cards} />}
+            </div>
+          </div>
+        </section>
+      )}
       <div className="text-center">
         <p className="rights">Powered by weirdstoner.eth & stanley</p>
       </div>

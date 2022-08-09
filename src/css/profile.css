@@ -33,7 +33,7 @@ main {
   max-width: 60rem;
   padding: 2rem 4rem;
   box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
-  background-color: #ffc9fc;
+  border: 0.2rem solid var(--primary-color);
   margin: 4rem auto;
 }
 .profileDetailsHeader {
@@ -60,9 +60,9 @@ main {
 .profileCard input {
   width: 100%;
   padding: 1.2rem 1rem;
-  font-size: 2.2rem;
-  color: #fff;
-
+  font-size: 2.5rem;
+  /* color: #fff; */
+  font-weight: 600;
   margin-bottom: 2rem;
   border-radius: 1rem;
   transition: all 0.1s;

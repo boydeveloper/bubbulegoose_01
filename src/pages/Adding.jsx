@@ -9,17 +9,20 @@ import {
   getDownloadURL,
   uploadBytesResumable,
 } from 'firebase/storage';
-
+import { v4 as uuidv4 } from 'uuid';
 function Adding() {
   const [discordId, setDiscordId] = useState('');
   const [handle, setHandle] = useState('');
   const [image, setImage] = useState();
+  const [loading, setLoading] = useState(false);
   const storage = getStorage();
   const navigate = useNavigate();
-
+  if (loading) {
+    return <Spinner />;
+  }
   const onSubmit = (e) => {
     e.preventDefault();
-    const storageRef = ref(storage, image.name);
+    const storageRef = ref(storage, `${image.name}--${uuidv4()}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
       'state_changed',
@@ -45,12 +48,15 @@ function Adding() {
 
             return addDoc(docRef, formData);
           })
-          .then((res) => navigate('/gallery'))
+          .then((res) => {
+            navigate('/gallery');
+          })
           .catch((err) => {
             console.log(`error`, err);
           });
       }
     );
+    setLoading(true);
   };
 
   return (
@@ -70,7 +76,7 @@ function Adding() {
                 value={discordId}
                 onChange={(e) => setDiscordId(e.target.value)}
                 required
-                placeholder="Daniel456#7"
+                placeholder="weirdstoner.eth #6163"
               />
             </div>
             <div className="add">
@@ -81,7 +87,7 @@ function Adding() {
                 value={handle}
                 onChange={(e) => setHandle(e.target.value)}
                 required
-                placeholder="weirdstoner_45#"
+                placeholder="weirdstoner_eth"
               />
             </div>
             <div className="add">
@@ -97,7 +103,7 @@ function Adding() {
             </div>
 
             <button type="submit" className="btn-upload">
-              Submit
+              Upload art
             </button>
           </form>
         </div>

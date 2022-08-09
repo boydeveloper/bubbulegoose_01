@@ -27,10 +27,12 @@
   margin-bottom: 3rem;
   color: #fff;
   font-size: 2.4rem;
+  font-weight: 600;
 }
 .form-box input::placeholder {
   color: var(--white-color);
   font-family: inherit;
+  font-weight: 600;
   text-shadow: none;
 }
 .img-box {

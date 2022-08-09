@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
-import OAuth from '../components/OAuth';
 import heroimage from '../img/heroimage.png';
 import {
   getAuth,
@@ -11,7 +9,7 @@ import {
 } from 'firebase/auth';
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
-
+import Spinner from '../components/Spinner';
 function SignUp() {
   const [formData, setFormData] = useState({
     email: '',
@@ -19,6 +17,7 @@ function SignUp() {
     confirmPassword: '',
     name: '',
   });
+  const [loading, setLoading] = useState(false);
   const { email, password, confirmPassword, name } = formData;
   const navigate = useNavigate();
   const onChange = (e) => {
@@ -27,6 +26,9 @@ function SignUp() {
       [e.target.id]: e.target.value,
     }));
   };
+  if (loading) {
+    return <Spinner />;
+  }
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -49,10 +51,10 @@ function SignUp() {
       delete formDataCopy.password;
       delete formDataCopy.confirmPassword;
       formDataCopy.timestamp = serverTimestamp();
-
       await setDoc(doc(db, 'users', user.uid), formDataCopy);
-
+      setLoading(true);
       navigate('/adding');
+      setLoading(false);
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong with reg');

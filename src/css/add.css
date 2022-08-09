@@ -30,7 +30,7 @@
 }
 .add input::placeholder {
   color: var(--white-color);
-  font-size: 2.2rem;
+  font-size: 2.6rem;
 }
 .add-subtext {
   font-size: 2.8rem;
