@@ -1,3 +1,4 @@
+import { FaTwitter } from 'react-icons/fa';
 function ListingItem({ cards }) {
   return (
     <>
@@ -7,7 +8,9 @@ function ListingItem({ cards }) {
             <img src={card.image} alt={`art${card.id}`} className="card-img" />
             <div className="id">
               <h3>{card.discordId}</h3>
-              <p>{card.handle}</p>
+              <p className="twitter-details">
+                <FaTwitter color="var(--primary-color)" /> {card.handle}
+              </p>
             </div>
           </div>
         );
