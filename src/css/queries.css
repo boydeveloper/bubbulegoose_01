@@ -34,7 +34,7 @@
   }
   .menu-btn {
     display: block;
-    z-index: 999;
+    z-index: 9999;
   }
   .close-btn {
     display: none;
@@ -49,11 +49,13 @@
     transform: translateX(100%);
     background-color: var(--primary-color);
     align-items: flex-end;
+    /* height: 100%; */
+    width: 70%;
     height: 100vh;
-    width: 60%;
-    z-index: 99;
-    margin-top: 9rem;
-    padding: 2rem 4rem;
+
+    /* margin-top: 9rem; */
+    z-index: 9999;
+    padding: 9rem 4rem;
     transition: all ease 0.3s;
   }
 
@@ -87,6 +89,9 @@
     /* max-width: 100%; */
     height: auto;
     width: 100%;
+  }
+  .rights {
+    font-size: 2.8rem;
   }
 }
 @media (max-width: 500px) {
@@ -130,5 +135,8 @@
   }
   .logout {
     padding: 1.6rem 2.5rem;
+  }
+  .rights {
+    font-size: 2.3rem;
   }
 }

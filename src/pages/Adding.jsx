@@ -97,6 +97,7 @@ function Adding() {
                   type="file"
                   id="discordId"
                   required
+                  className="formInputFile"
                   onChange={(e) => setImage(e.target.files[0])}
                 />
               </label>

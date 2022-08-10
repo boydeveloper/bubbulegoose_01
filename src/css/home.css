@@ -45,3 +45,9 @@
   width: 100%;
   height: 100%;
 }
+.control-arrow {
+  display: none !important;
+}
+.carousel-status {
+  display: none;
+}

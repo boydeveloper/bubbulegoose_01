@@ -21,13 +21,24 @@
 }
 .form-box input {
   background: #ff77f7;
+  box-shadow: rgba(0, 0, 0, 0.11);
   border: 0.2rem solid #000000;
   border-radius: 1rem;
+  outline: none;
   padding: 1.6rem 2rem;
   margin-bottom: 3rem;
   color: #fff;
   font-size: 2.4rem;
   font-weight: 600;
+}
+.formInputFile::-webkit-file-upload-button {
+  background-color: #00cc66;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
 }
 .form-box input::placeholder {
   color: var(--white-color);
