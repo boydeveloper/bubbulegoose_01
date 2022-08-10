@@ -25,11 +25,10 @@ function Home() {
           cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
         );
       })
-
       .catch((err) => {
         console.log(err);
       });
-  }, [colref, cards]);
+  }, [colref]);
 
   return (
     <>

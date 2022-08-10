@@ -1,11 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [openNav, setOpenav] = useState(false);
-
+  const handleNavClose = () => {
+    setOpenav(false);
+  };
+  useEffect(() => {
+    handleNavClose();
+  }, [location]);
   return (
     <div className="head">
       <header className={openNav ? 'header nav-open' : 'header'}>
