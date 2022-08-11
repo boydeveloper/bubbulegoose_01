@@ -27,7 +27,7 @@ function Gallery() {
       .catch((err) => {
         console.log(err);
       });
-  }, [colref]);
+  }, []);
 
   return (
     <>
