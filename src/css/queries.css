@@ -46,21 +46,21 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateX(100%);
+    transform: translateY(-100%);
     background-color: var(--primary-color);
-    align-items: flex-end;
+    align-items: flex-start;
     /* height: 100%; */
-    width: 70%;
-    height: 100vh;
+    width: 100%;
+    height: 50vh;
 
-    /* margin-top: 9rem; */
+    margin-top: 8rem;
     z-index: 9999;
-    padding: 9rem 4rem;
+    padding: 5rem 4rem;
     transition: all ease 0.3s;
   }
 
   .nav-open .nav-links {
-    transform: translateX(0%);
+    transform: translateY(0%);
     opacity: 1;
     visibility: visible;
     display: flex;

@@ -8,7 +8,7 @@ import ListingItem from '../components/Listingitem';
 function Gallery() {
   const colref = collection(db, 'cards');
   const [cards, setCards] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(null);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function Gallery() {
           <div className="container">
             <p className="section-subtext">Recent Uploads</p>
             <div className="grid--3--cols" id="image-container">
-              {loading && <Spinner />}
+              {}
               {cards && <ListingItem cards={cards} />}
             </div>
           </div>
