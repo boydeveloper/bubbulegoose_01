@@ -12,6 +12,7 @@ function Gallery() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
+    console.log('hi');
     getDocs(colref)
       .then((snapshot) => {
         let cards = [];
@@ -27,7 +28,7 @@ function Gallery() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [colref]);
 
   return (
     <>
