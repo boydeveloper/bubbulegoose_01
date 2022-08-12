@@ -11,10 +11,10 @@ import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
 
 function Home() {
-  const colref = collection(db, 'cards');
   const [cards, setCards] = useState(null);
 
   useEffect(() => {
+    const colref = collection(db, 'cards');
     getDocs(colref)
       .then((snapshot) => {
         let cards = [];
@@ -28,7 +28,7 @@ function Home() {
       .catch((err) => {
         console.log(err);
       });
-  }, [colref]);
+  }, []);
 
   return (
     <>
