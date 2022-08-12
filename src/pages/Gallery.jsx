@@ -6,13 +6,13 @@ import Spinner from '../components/Spinner';
 import ListingItem from '../components/Listingitem';
 
 function Gallery() {
-  const colref = collection(db, 'cards');
   const [cards, setCards] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
     console.log('hi');
+    const colref = collection(db, 'cards');
     getDocs(colref)
       .then((snapshot) => {
         let cards = [];
@@ -28,7 +28,7 @@ function Gallery() {
       .catch((err) => {
         console.log(err);
       });
-  }, [colref]);
+  }, []);
 
   return (
     <>
@@ -54,21 +54,26 @@ function Gallery() {
           </form>
         </div>
       </div>
-      {cards?.length === 0 ? (
+
+      {loading ? (
+        <Spinner />
+      ) : cards && cards.length > 0 ? (
+        <>
+          <section className="section-mirrors">
+            <div className="container">
+              <p className="section-subtext">Recent Uploads</p>
+              <div className="grid--3--cols" id="image-container">
+                <ListingItem cards={cards} />
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
         <div className="error">
           <h1>Arts not Found</h1>
         </div>
-      ) : (
-        <section className="section-mirrors">
-          <div className="container">
-            <p className="section-subtext">Recent Uploads</p>
-            <div className="grid--3--cols" id="image-container">
-              {}
-              {cards && <ListingItem cards={cards} />}
-            </div>
-          </div>
-        </section>
       )}
+
       <div className="text-center">
         <p className="rights">Powered by weirdstoner.eth & stanley</p>
       </div>
