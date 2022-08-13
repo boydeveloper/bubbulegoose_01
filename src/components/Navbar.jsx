@@ -50,7 +50,10 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
-            <button className="menu-btn" onClick={() => setOpenav(!openNav)}>
+            <button
+              className="menu-btn"
+              onClick={() => setOpenav((prev) => !prev)}
+            >
               <FaBars className="bar-btn" />
               <FaTimes className="close-btn" />
             </button>
