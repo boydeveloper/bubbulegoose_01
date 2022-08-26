@@ -71,7 +71,7 @@ function SignIn() {
                 Forgot Password
               </Link>
             </div>
-            <button className="login-btn">login</button>
+            <button className="login-btn">Login</button>
             <OAuth />
             <span className="precaution-text"> Don't have an account?</span>
             <Link to="/sign-up" className="signup-link">

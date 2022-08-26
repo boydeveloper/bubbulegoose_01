@@ -18,8 +18,8 @@ html {
 
 body {
   color: var(--black-color);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 900;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 400;
   overflow-x: hidden;
 }
 .head {
@@ -46,7 +46,7 @@ body {
   font-size: 4rem;
   color: var(--white-color);
   cursor: pointer;
-  /* z-index: -1; */
+  font-weight: 700;
 }
 .nav-links {
   display: flex;
@@ -60,6 +60,7 @@ body {
 .nav-item:visited {
   color: var(--white-color);
   font-size: 2.4rem;
+  font-weight: 600;
   transition: opacity 0.3s;
   text-decoration: none;
 }
@@ -70,6 +71,11 @@ body {
 .grid--3--cols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+.grid--4--cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
 }
 #image-container {
@@ -100,13 +106,20 @@ h1 {
   padding: 0.8rem;
   width: 100%;
 }
-.id h3 {
+.discord:visited,
+.discord:link {
   font-size: 2.4rem;
+  text-decoration: none;
+  color: var(--black-color);
+  transition: color 0.3s;
+  font-weight: 600;
+}
+.discord:hover {
+  color: var(--primary-color);
 }
 .id p {
   font-size: 1.6rem;
 }
-/*  */
 
 .gallery-heading {
   font-size: 6.8rem;

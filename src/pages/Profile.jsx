@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { updateDoc, doc } from 'firebase/firestore';
+import ListingItem from '../components/Listingitem';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
-
+import { useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { FaSignOutAlt } from 'react-icons/fa';
 function Profile() {
   const auth = getAuth();
   const [changeDetails, setChangeDetails] = useState(false);
@@ -12,6 +15,29 @@ function Profile() {
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
   });
+  const [cards, setCards] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log('hi');
+    const colref = collection(db, 'cards');
+    getDocs(colref)
+      .then((snapshot) => {
+        let cards = [];
+        snapshot.docs.forEach((doc) => {
+          cards.push({ ...doc.data(), id: doc.id });
+        });
+
+        setCards(
+          cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
+        );
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const { name, email } = formData;
   const navigate = useNavigate();
 
@@ -22,7 +48,6 @@ function Profile() {
   const onSubmit = async () => {
     try {
       if (auth.currentUser.displayName !== name) {
-        //update displayname
         await updateProfile(auth.currentUser, {
           displayName: name,
         });
@@ -47,27 +72,19 @@ function Profile() {
       <div className="container">
         <div className="profile">
           <div className="profileHeader">
-            <p className="pageHeader">My Profile</p>
+            <p className="pageHeader">Baller Profile</p>
             <button className="logout" type="button" onClick={onLogout}>
-              Logout
+              Logout <FaSignOutAlt />
             </button>
           </div>
 
           <main>
             <div className="profileDetailsHeader flex">
               <p className="profileDetailsText">Personal Details</p>
-              <p
-                className="changePersonalDetails"
-                onClick={() => {
-                  changeDetails && onSubmit();
-                  setChangeDetails((prevState) => !prevState);
-                }}
-              >
-                {changeDetails ? 'Done' : 'Change'}
-              </p>
             </div>
             <div className="profileCard">
               <form className="form">
+                <label>Discordid</label>
                 <input
                   id="name"
                   type="text"
@@ -75,7 +92,7 @@ function Profile() {
                   value={name}
                   onChange={onChange}
                 />
-
+                <label>Email</label>
                 <input
                   type="text"
                   id="email"
@@ -84,8 +101,30 @@ function Profile() {
                   onChange={onChange}
                 />
               </form>
+              <button
+                className="changePersonalDetails"
+                onClick={() => {
+                  changeDetails && onSubmit();
+                  setChangeDetails((prevState) => !prevState);
+                }}
+              >
+                {changeDetails ? 'Done' : 'Update'}
+              </button>
             </div>
           </main>
+
+          <p className="section-subtext">Baller arts</p>
+          {cards?.length > 0 ? (
+            <div className="grid--3--cols" id="image-container">
+              <ListingItem
+                cards={cards.filter((card) => card.discordId !== name)}
+              />
+            </div>
+          ) : (
+            <div className="error">
+              <h1>Arts not Found</h1>
+            </div>
+          )}
         </div>
       </div>
     </>

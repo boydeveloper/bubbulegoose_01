@@ -5,6 +5,7 @@
 }
 .add-heading {
   font-size: 6rem;
+  font-weight: 800;
   color: var(--primary-color);
 }
 .text-center {
@@ -14,8 +15,9 @@
   width: 100%;
 }
 .add label {
+  margin-bottom: 2rem;
   font-size: 3rem;
-  margin-bottom: 2em;
+  font-weight: 600;
 }
 .add input {
   width: 100%;

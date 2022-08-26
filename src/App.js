@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
+import Footer from './components/Footer';
+
 import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import SignUp from './pages/SignUp';
@@ -49,7 +51,7 @@ function App() {
             <Route path="/card/:id" element={<Card />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
-
+          <Footer />
           <ToastContainer className="Toast" />
         </Router>
       )}

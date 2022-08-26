@@ -1,5 +1,4 @@
 .profile {
-  max-width: 90rem;
   margin: 0 auto;
   padding: 3.2rem 0;
 }
@@ -10,65 +9,75 @@
 }
 .pageHeader {
   font-size: 3.96rem;
+  font-weight: 700;
   color: var(--primary-color);
 }
 .logout {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  color: var(--primary-color);
   padding: 1.3rem 4rem;
+  background-color: transparent;
   font-size: 2.6rem;
   transition: transform 0.3s;
   display: inline-block;
   font-weight: 900;
   border: 0.2rem var(--black-color) solid;
   border-radius: 9px;
+  transition: color 0.3s;
 }
 .logout:hover,
 .logout:active {
-  transform: scale(1.05);
+  color: var(--white-color);
+  background-color: var(--primary-color);
 }
-
+.form label {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+}
 main {
-  border-radius: 2rem;
   max-width: 60rem;
-  padding: 2rem 4rem;
-  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
-  border: 0.2rem solid var(--primary-color);
-  margin: 4rem auto;
+  margin-bottom: 8rem;
 }
 .profileDetailsHeader {
   display: flex;
   align-items: center;
-  margin: 0 auto;
   justify-content: space-between;
-}
-.profileCard {
-  margin: 0 auto;
 }
 
 .profileDetailsText {
   font-size: 2.5rem;
   color: var(--white-color);
-  text-shadow: -2px 0 var(--primary-color), 0 2px var(--primary-color),
-    2px 0 var(--primary-color), 0 -2px var(--primary-color);
 }
 .changePersonalDetails {
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: var(--primary-color);
   cursor: pointer;
+  width: 100%;
+  padding: 1.2rem;
+  font-weight: 800;
+  background-color: transparent;
+  border-radius: 1rem;
+  transition: color 0.3s;
+}
+.changePersonalDetails:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
 }
 .profileCard input {
   width: 100%;
+  background-color: var(--primary-color);
   padding: 1.2rem 1rem;
   font-size: 2.5rem;
-  /* color: #fff; */
   font-weight: 600;
-  margin-bottom: 2rem;
+  color: var(--white-color);
+  margin: 2rem 0;
   border-radius: 1rem;
+  border: solid 0.2rem #000;
   transition: all 0.1s;
+  font-family: inherit;
 }
+
 .profileCard input:focus {
-  border: 0.2rem solid var(--primary-color);
   outline: none;
 }
 .form input {

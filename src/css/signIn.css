@@ -9,15 +9,17 @@
 .move-center h1 {
   font-size: 4.8rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .move-center p {
-  font-size: 3.2rem;
+  font-size: 3rem;
   margin-bottom: 5rem;
   display: block;
 }
 .form-box label {
   margin-bottom: 2rem;
-  font-size: 3.2rem;
+  font-size: 3rem;
+  font-weight: 600;
 }
 .form-box input {
   background: #ff77f7;
@@ -26,6 +28,7 @@
   border-radius: 1rem;
   outline: none;
   padding: 1.6rem 2rem;
+  font-family: inherit;
   margin-bottom: 3rem;
   color: #fff;
   font-size: 2.4rem;
@@ -56,10 +59,11 @@
   max-width: 46.2rem;
   width: 100%;
   background-color: var(--primary-color);
-  padding: 1.7rem 2rem;
-  font-size: 3.6rem;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  cursor: pointer;
   border-radius: 12px;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--white-color);
   border: 0.2rem solid #000;
   margin-top: 3rem;
@@ -77,10 +81,9 @@
   font-size: 3rem;
   background-color: var(--white-color);
   border: 1px solid #000;
-  color: var(--white-color);
+  font-weight: 600;
   border-radius: 10px;
   padding: 1.7rem 0;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin-bottom: 2rem;
 }
 .precaution-text {
@@ -90,7 +93,7 @@
 .signup-link:visited {
   color: var(--primary-color);
   text-decoration: underline;
-  font-size: 2.4rem;
+  font-size: 2rem;
   transition: opacity 0.3s;
 }
 .signup-link:hover,

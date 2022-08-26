@@ -9,10 +9,12 @@ import carouselImg from '../img/crarouselimg.png';
 import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
+import { getAuth } from 'firebase/auth';
 
 function Home() {
   const [cards, setCards] = useState(null);
 
+  const auth = getAuth();
   useEffect(() => {
     const colref = collection(db, 'cards');
     getDocs(colref)
@@ -36,12 +38,12 @@ function Home() {
         <div className="container">
           <div className="hero-landing">
             <div className="text-box">
-              <h1 className="heading-primary">Bubblegoose Fan Art Shop</h1>
+              <h1 className="heading-primary">Bubblegoose fan art platform</h1>
               <p className="hero-text">
                 Updated collections of the BubbleGoose community
               </p>
               <Link to="/adding" className="hero-btn">
-                ADD ART
+                Add art
               </Link>
             </div>
             <div className="image-box">
@@ -86,9 +88,6 @@ function Home() {
           )}
         </div>
       </section>
-      <div className="text-center">
-        <p className="rights">Powered by weirdstoner.eth & stanley</p>
-      </div>
     </>
   );
 }

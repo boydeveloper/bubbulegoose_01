@@ -10,11 +10,15 @@ import {
   uploadBytesResumable,
 } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
+import { getAuth, updateCurrentUser } from 'firebase/auth';
 function Adding() {
-  const [discordId, setDiscordId] = useState('');
   const [handle, setHandle] = useState('');
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
+  const auth = getAuth();
+  console.log(auth.currentUser.displayName);
+  const [discordId, setDiscordId] = useState(auth.currentUser.displayName);
+
   const storage = getStorage();
   const navigate = useNavigate();
   if (loading) {
@@ -74,7 +78,7 @@ function Adding() {
                 type="text"
                 id="discordId"
                 value={discordId}
-                onChange={(e) => setDiscordId(e.target.value)}
+                onChange={() => setDiscordId(discordId)}
                 required
                 placeholder="weirdstoner.eth #6163"
               />
