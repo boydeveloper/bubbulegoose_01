@@ -20,9 +20,7 @@ function Gallery() {
           cards.push({ ...doc.data(), id: doc.id });
         });
 
-        setCards(
-          cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
-        );
+        setCards(cards);
         setLoading(false);
       })
       .catch((err) => {
@@ -63,7 +61,7 @@ function Gallery() {
             <div className="container">
               <p className="section-subtext">Recent Uploads</p>
               <div className="grid--3--cols" id="image-container">
-                <ListingItem cards={cards} />
+                <ListingItem cards={cards} k />
               </div>
             </div>
           </section>

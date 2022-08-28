@@ -23,9 +23,7 @@ function Home() {
         snapshot.docs.forEach((doc) => {
           cards.push({ ...doc.data(), id: doc.id });
         });
-        setCards(
-          cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
-        );
+        setCards(cards);
       })
       .catch((err) => {
         console.log(err);

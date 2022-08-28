@@ -7,18 +7,19 @@ import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
+
 import { FaSignOutAlt } from 'react-icons/fa';
 function Profile() {
   const auth = getAuth();
   const [changeDetails, setChangeDetails] = useState(false);
+
+  const [cards, setCards] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
   });
-  const [cards, setCards] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
-
   useEffect(() => {
     console.log('hi');
     const colref = collection(db, 'cards');
@@ -28,7 +29,6 @@ function Profile() {
         snapshot.docs.forEach((doc) => {
           cards.push({ ...doc.data(), id: doc.id });
         });
-
         setCards(
           cards.sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
         );
@@ -39,6 +39,7 @@ function Profile() {
       });
   }, []);
   const { name, email } = formData;
+
   const navigate = useNavigate();
 
   const onLogout = () => {
@@ -55,9 +56,11 @@ function Profile() {
         await updateDoc(userRef, {
           name,
         });
+
         toast.success('updated!');
       }
     } catch (error) {
+      console.log(error);
       toast.error('Could not update');
     }
   };
@@ -116,9 +119,7 @@ function Profile() {
           <p className="section-subtext">Baller arts</p>
           {cards?.length > 0 ? (
             <div className="grid--3--cols" id="image-container">
-              <ListingItem
-                cards={cards.filter((card) => card.discordId !== name)}
-              />
+              <ListingItem cards={cards.filter((card) => card.name !== name)} />
             </div>
           ) : (
             <div className="error">

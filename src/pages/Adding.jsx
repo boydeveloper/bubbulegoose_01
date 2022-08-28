@@ -16,7 +16,7 @@ function Adding() {
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
   const auth = getAuth();
-  console.log(auth.currentUser.displayName);
+
   const [discordId, setDiscordId] = useState(auth.currentUser.displayName);
 
   const storage = getStorage();
