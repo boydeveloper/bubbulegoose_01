@@ -116,7 +116,7 @@ h1 {
   color: var(--primary-color);
 }
 .gallery {
-  height: 100vh;
+  height: 100%;
 }
 .id p {
   font-size: 1.6rem;
