@@ -37,7 +37,7 @@ function Gallery() {
   }
   return (
     <>
-      <div className="container">
+      <div className="container gallery">
         <div className="gallery-header">
           <div className="gallery-form">
             <div className="gallery-heading">BALLERS CLUB</div>
@@ -46,9 +46,8 @@ function Gallery() {
             Add art
           </Link>
         </div>
-      </div>
-      <section className="section-mirrors">
-        <div className="container">
+
+        <section className="section-mirrors">
           <p className="section-subtext">All Drops</p>
           {loading ? (
             <div className="error">
@@ -63,8 +62,8 @@ function Gallery() {
               <h1>Arts not Found</h1>
             </div>
           )}
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }

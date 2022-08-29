@@ -15,8 +15,6 @@ import { async } from '@firebase/util';
 import Spinner from '../components/Spinner';
 function Profile() {
   const auth = getAuth();
-
-  const { cards } = useGetData();
   const [changeDetails, setChangeDetails] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -25,6 +23,7 @@ function Profile() {
   });
   const { name, email } = formData;
 
+  const { cards, loading } = useGetData();
   const onLogout = () => {
     auth.signOut();
     navigate('/');
@@ -49,6 +48,7 @@ function Profile() {
         });
 
         toast.success('updated!');
+        cards.filter((card) => card.discordId === name);
       }
       cards.forEach(async (card) => {
         if (auth.currentUser.email === card.email) {
@@ -62,7 +62,6 @@ function Profile() {
         }
       });
     } catch (error) {
-      console.log(error);
       toast.error('Could not update');
     }
   };
@@ -77,50 +76,58 @@ function Profile() {
               Logout <FaSignOutAlt />
             </button>
           </div>
-
-          <main>
-            <div className="profileDetailsHeader flex">
-              <p className="profileDetailsText">Personal Details</p>
-            </div>
-            <div className="profileCard">
-              <form className="form">
-                <label>Discordid</label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  disabled={!changeDetails}
-                  onChange={onChange}
-                />
-                <label>Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  value={email}
-                  disabled={!changeDetails}
-                  onChange={onChange}
-                />
-              </form>
-              <button
-                className="changePersonalDetails"
-                onClick={() => {
-                  changeDetails && onSubmit();
-                  setChangeDetails((prevState) => !prevState);
-                }}
-              >
-                {changeDetails ? 'Done' : 'Update'}
-              </button>
-            </div>
-          </main>
-
-          <p className="section-subtext">Baller arts</p>
-          {cards?.length > 0 ? (
+        </div>
+        <main>
+          <div className="profileDetailsHeader flex">
+            <p className="profileDetailsText">Personal Details</p>
+          </div>
+          <div className="profileCard">
+            <form className="form">
+              <label>Discordid</label>
+              <input
+                id="name"
+                type="text"
+                value={name}
+                disabled={!changeDetails}
+                onChange={onChange}
+              />
+              <label>Email</label>
+              <input
+                type="text"
+                id="email"
+                value={email}
+                disabled={!changeDetails}
+                onChange={onChange}
+              />
+            </form>
+            <button
+              className="changePersonalDetails"
+              onClick={() => {
+                changeDetails && onSubmit();
+                setChangeDetails((prevState) => !prevState);
+              }}
+            >
+              {changeDetails ? 'Done' : 'Update'}
+            </button>
+          </div>
+        </main>
+        <div className="section">
+          {loading ? (
+            <>
+              <p className="section-subtext">Baller arts</p>
+              <div className="error">
+                <h1>Loading....</h1>
+              </div>
+            </>
+          ) : cards && cards.length > 0 ? (
             <div className="grid--3--cols" id="image-container">
-              <ListingItem cards={cards} />
+              <ListingItem
+                cards={cards.filter((card) => card.discordId === name)}
+              />
             </div>
           ) : (
             <div className="error">
-              <h1>Arts not Found</h1>
+              <h1>No art found</h1>
             </div>
           )}
         </div>
