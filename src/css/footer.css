@@ -2,7 +2,6 @@
   background-color: var(--primary-color);
   padding: 9rem;
   color: var(--white-color);
-  justify-content: end;
 }
 .ft-heading {
   font-size: 2rem;

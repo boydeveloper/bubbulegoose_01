@@ -18,6 +18,7 @@ function Adding() {
   const auth = getAuth();
 
   const [discordId, setDiscordId] = useState(auth.currentUser.displayName);
+  const [email, setEmail] = useState(auth.currentUser.email);
 
   const storage = getStorage();
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ function Adding() {
             const formData = {
               discordId,
               handle,
+              email,
               image: downloadURL,
               timestamp: serverTimestamp(),
             };
@@ -78,7 +80,7 @@ function Adding() {
                 type="text"
                 id="discordId"
                 value={discordId}
-                onChange={() => setDiscordId(discordId)}
+                onChange={(e) => e.target.value}
                 required
                 placeholder="weirdstoner.eth #6163"
               />

@@ -40,7 +40,7 @@ function Home() {
               <p className="hero-text">
                 Updated collections of the BubbleGoose community
               </p>
-              <Link to="/adding" className="hero-btn">
+              <Link to="/adding" className="addArt-btn">
                 Add art
               </Link>
             </div>

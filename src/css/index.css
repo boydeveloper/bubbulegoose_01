@@ -20,6 +20,7 @@ body {
   color: var(--black-color);
   font-family: 'Clash Display', sans-serif;
   font-weight: 400;
+  height: 100vh;
   overflow-x: hidden;
 }
 .head {
@@ -88,11 +89,8 @@ h1 {
 .image-boxes {
   display: flex;
   flex-direction: column;
-  /* height: 46.7rem !importan; */
-  /* width: 41.7rem; */
 }
-.img-box {
-}
+
 .card-img {
   width: 100%;
 
@@ -120,9 +118,15 @@ h1 {
 .id p {
   font-size: 1.6rem;
 }
-
+.gallery-header {
+  display: flex;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
 .gallery-heading {
-  font-size: 6.8rem;
+  font-size: 4.2em;
+  font-weight: 700;
   color: var(--primary-color);
 }
 .search-box {
@@ -150,7 +154,20 @@ h1 {
   font-size: 4rem;
   color: var(--primary-color);
 }
-
+.addBtnBaller:link,
+.addBtnBaller:visited {
+  background-color: var(--primary-color);
+  padding: 1.3rem 4rem;
+  font-weight: 600;
+  font-size: 2.2rem;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  color: var(--white-color);
+}
+.addBtnBaller:hover {
+  opacity: 0.8;
+}
 .align-center {
   text-align: center;
 }
@@ -161,37 +178,7 @@ h1 {
 /* //////// PROFILE*/
 
 /*  */
-.loadingSpinnerContainer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 5000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.loadingSpinner {
-  width: 64px;
-  height: 64px;
-  border: 8px solid;
-  border-color: var(--primary-color) transparent var(--primary-color)
-    transparent;
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .menu-btn {
   font-size: 3.2rem;
   display: flex;
@@ -233,4 +220,12 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  font-size: 1.8rem;
+  color: var(--black-color);
+}
+.twitter-details:hover {
+  color: var(--primary-color);
+}
+.section-mirrors {
+  padding-top: 10rem 0;
 }

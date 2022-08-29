@@ -18,8 +18,8 @@
   margin-bottom: 3rem;
   font-weight: 600;
 }
-.hero-btn:link,
-.hero-btn:visited {
+.addArt-btn:link,
+.addArt-btn:visited {
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 1.3rem 11.7rem;
@@ -30,8 +30,8 @@
   display: inline-block;
   border-radius: 9px;
 }
-.hero-btn:hover,
-.hero-btn:active {
+.addArt-btn:hover,
+.addArt-btn:active {
   transform: scale(1.05);
 }
 .section-heading {

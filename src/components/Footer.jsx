@@ -36,7 +36,7 @@ function Footer() {
                 WAGMI
               </Link>
               <Link to="/" className="ft-links">
-                Careers
+                Official website
               </Link>
             </ul>
             <ul className="ft-box">

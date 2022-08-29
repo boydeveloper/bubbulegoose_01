@@ -24,16 +24,8 @@ function Navbar() {
 
             <ul className="nav-links">
               <li className="nav-link margin">
-                <Link
-                  to="https://www.magiceden.io/marketplace/bubblegoose_ballers"
-                  className="nav-item"
-                >
-                  Official Website
-                </Link>
-              </li>
-              <li className="nav-link margin">
                 <Link to="/gallery" className="nav-item">
-                  Art Gallery
+                  Ballers mirror
                 </Link>
               </li>
               <li className="nav-link">

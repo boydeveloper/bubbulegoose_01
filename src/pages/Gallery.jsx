@@ -2,6 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { db } from '../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import ListingItem from '../components/Listingitem';
 
@@ -27,54 +28,43 @@ function Gallery() {
         console.log(err);
       });
   }, []);
-
+  if (loading) {
+    return (
+      <div className="error">
+        <h1>Loading.....</h1>
+      </div>
+    );
+  }
   return (
     <>
       <div className="container">
         <div className="gallery-header">
-          <div className="gallery-heading">BALLERS CLUB</div>
-
-          <form>
-            <div className="search-box">
-              <FaSearch fontSize="2rem" color="#fff" />
-
-              <input
-                type="text"
-                name=""
-                id=""
-                value={search}
-                disabled
-                onChange={(e) => setSearch(e.target.value)}
-                className="search"
-                placeholder="Search for dicord id"
-              />
-            </div>
-          </form>
+          <div className="gallery-form">
+            <div className="gallery-heading">BALLERS CLUB</div>
+          </div>
+          <Link to="/adding" className="addBtnBaller">
+            Add art
+          </Link>
         </div>
       </div>
-
-      {loading ? (
-        <Spinner />
-      ) : cards && cards.length > 0 ? (
-        <>
-          <section className="section-mirrors">
-            <div className="container">
-              <p className="section-subtext">Recent Uploads</p>
-              <div className="grid--3--cols" id="image-container">
-                <ListingItem cards={cards} k />
-              </div>
+      <section className="section-mirrors">
+        <div className="container">
+          <p className="section-subtext">All Drops</p>
+          {loading ? (
+            <div className="error">
+              <h1>Loading.........</h1>
             </div>
-          </section>
-        </>
-      ) : (
-        <div className="error">
-          <h1>Arts not Found</h1>
+          ) : cards && cards.length > 0 ? (
+            <div className="grid--3--cols" id="image-container">
+              <ListingItem cards={cards} />
+            </div>
+          ) : (
+            <div className="error">
+              <h1>Arts not Found</h1>
+            </div>
+          )}
         </div>
-      )}
-
-      <div className="text-center">
-        <p className="rights">Powered by weirdstoner.eth & stanley</p>
-      </div>
+      </section>
     </>
   );
 }
