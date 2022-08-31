@@ -4,6 +4,7 @@ import { db } from '../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import ListingItem from '../components/Listingitem';
+import Spinner from '../components/Spinner';
 
 function Gallery() {
   const [cards, setCards] = useState(null);
@@ -27,13 +28,7 @@ function Gallery() {
         console.log(err);
       });
   }, []);
-  if (loading) {
-    return (
-      <div className="error">
-        <h1>Loading.....</h1>
-      </div>
-    );
-  }
+
   return (
     <>
       <div className="container gallery">
@@ -50,11 +45,9 @@ function Gallery() {
         </div>
 
         <section className="section-mirrors">
-          <p className="section-subtext">All Drops</p>
+          <p className="section-subtext">Baller's drop</p>
           {loading ? (
-            <div className="error">
-              <h1>Loading.........</h1>
-            </div>
+            <Spinner />
           ) : cards && cards.length > 0 ? (
             <div className="grid--3--cols" id="image-container">
               <ListingItem

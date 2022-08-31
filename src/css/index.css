@@ -15,6 +15,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  /* overflow-y: scroll; */
 }
 
 body {
@@ -22,7 +23,16 @@ body {
   font-family: 'Clash Display', sans-serif;
   font-weight: 400;
   height: 100vh;
+  position: relative;
   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 1.5rem;
+  background-color: #dadada;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5rem;
 }
 .head {
   position: relative;
@@ -116,9 +126,7 @@ h1 {
 .discord:hover {
   color: var(--primary-color);
 }
-.gallery {
-  /* padding: 10; */
-}
+
 .id p {
   font-size: 1.6rem;
 }
@@ -126,7 +134,6 @@ h1 {
   display: flex;
   padding-top: 2rem;
   align-items: center;
-  margin-bottom: 4rem;
   justify-content: space-between;
 }
 .gallery-heading {
@@ -212,6 +219,9 @@ h1 {
   align-items: center;
 }
 .error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 18rem 0;
   margin: auto 0;
@@ -237,4 +247,31 @@ h1 {
 }
 .section-mirrors {
   padding: 10rem 0;
+}
+.loadingSpinnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: var(--primary-color) transparent var(--primary-color)
+    transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

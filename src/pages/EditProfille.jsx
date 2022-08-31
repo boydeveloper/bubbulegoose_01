@@ -62,7 +62,9 @@ function EditProfille() {
   return (
     <div className="container">
       <div className="section-mirrors">
-        <Link to="/profile">back </Link>
+        <Link to="/profile" className="backLink">
+          &larr;back
+        </Link>
         <aside>
           <div className="profileDetailsHeader">
             <p className="profileDetailsText">Personal Details</p>

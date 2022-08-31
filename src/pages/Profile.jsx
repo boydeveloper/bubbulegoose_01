@@ -28,13 +28,7 @@ function Profile() {
       [e.target.id]: e.target.value,
     }));
   };
-  if (loading) {
-    return (
-      <div className="error">
-        <h1>Loading......</h1>
-      </div>
-    );
-  }
+
   return (
     <>
       <div className="container">
@@ -50,7 +44,7 @@ function Profile() {
               <button
                 className="logout"
                 type="button"
-                onClick={(e) => navigate('/editPro')}
+                onClick={(e) => navigate('/profileSettings')}
               >
                 <span className="flex">
                   UpdateProfile

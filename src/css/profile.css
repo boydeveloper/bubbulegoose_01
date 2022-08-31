@@ -96,3 +96,12 @@ aside {
   align-items: center;
   justify-content: center;
 }
+
+.viewPro-header {
+  padding: 4rem 0;
+}
+.backLink:link,
+.backLink:visited {
+  font-size: 2rem;
+  color: var(--primary-color);
+}

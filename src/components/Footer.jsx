@@ -10,7 +10,7 @@ function Footer() {
       <div className="container">
         <div className="footer">
           <p className="copyright">
-            Copyright bubblegoose all rights reserved....{year}
+            Copyright bubblegoose all rights reserved year {year}
           </p>
           <span className="flex">
             <FaInstagram size={25} />

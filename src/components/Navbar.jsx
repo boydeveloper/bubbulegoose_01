@@ -29,7 +29,7 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-link">
-                <Link to="/profile" className="nav-item">
+                <Link to="/myProfile" className="nav-item">
                   Profile
                 </Link>
               </li>

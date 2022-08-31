@@ -10,25 +10,13 @@ import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
 import { getAuth } from 'firebase/auth';
+import Spinner from '../components/Spinner';
+import useGetData from '../hooks/useGetData';
 
 function Home() {
-  const [cards, setCards] = useState(null);
   const navigate = useNavigate();
   const auth = getAuth();
-  useEffect(() => {
-    const colref = collection(db, 'cards');
-    getDocs(colref)
-      .then((snapshot) => {
-        let cards = [];
-        snapshot.docs.forEach((doc) => {
-          cards.push({ ...doc.data(), id: doc.id });
-        });
-        setCards(cards);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const { cards, loading } = useGetData();
 
   return (
     <>
@@ -75,7 +63,10 @@ function Home() {
       <section className="section-mirrors">
         <div className="container">
           <p className="section-subtext">Recent Uploads</p>
-          {cards?.length > 0 ? (
+
+          {loading ? (
+            <Spinner />
+          ) : cards && cards?.length > 0 ? (
             <>
               <div className="grid--3--cols" id="image-container">
                 <ListingItem

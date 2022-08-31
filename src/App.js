@@ -3,18 +3,18 @@ import { useState, useEffect } from 'react';
 import BarLoader from 'react-spinners/ClimbingBoxLoader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './pages/Home';
-import Gallery from './pages/Gallery';
-import Footer from './components/Footer';
-import SignIn from './pages/SignIn';
-import Profile from './pages/Profile';
-import SignUp from './pages/SignUp';
+import {
+  Adding,
+  Gallery,
+  EditProfile,
+  Home,
+  Profile,
+  ViewProfile,
+  SignUp,
+  SignIn,
+} from './pages/index';
 import PrivateRoute from './components/PrivateRoute';
-import Adding from './pages/Adding';
-import ForgotPassword from './pages/ForgotPassword';
 import Navbar from './components/Navbar';
-import Card from './pages/Card';
-import EditProfille from './pages/EditProfille';
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -37,20 +37,18 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/adding" element={<PrivateRoute />}>
               <Route path="/adding" element={<Adding />} />
             </Route>
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/profile" element={<PrivateRoute />}>
-              <Route path="/profile" element={<Profile />} />
+            <Route path="/myProfile" element={<PrivateRoute />}>
+              <Route path="/myProfile" element={<Profile />} />
             </Route>
 
             <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/editPro" element={<EditProfille />} />
-            <Route path="/card/:id" element={<Card />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/profileSettings" element={<EditProfile />} />
+            <Route path="/profile/:id" element={<ViewProfile />} />
           </Routes>
 
           <ToastContainer className="Toast" />
