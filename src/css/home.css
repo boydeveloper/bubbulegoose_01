@@ -19,7 +19,8 @@
   font-weight: 600;
 }
 .addArt-btn:link,
-.addArt-btn:visited {
+.addArt-btn:visited,
+.viewMore {
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 1.3rem 11.7rem;
@@ -29,11 +30,16 @@
   transition: transform 0.3s;
   display: inline-block;
   border-radius: 9px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
 }
 .addArt-btn:hover,
-.addArt-btn:active {
+.addArt-btn:active,
+.viewMore:hover {
   transform: scale(1.05);
 }
+
 .section-heading {
   font-size: 6.8rem;
   color: var(--primary-color);
@@ -41,7 +47,7 @@
 .section-subtext {
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 #carousel {
   width: 100%;

@@ -3,8 +3,8 @@ import { Carousel } from 'react-responsive-carousel';
 import { useState, useEffect } from 'react';
 import { db } from '../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 import carouselImg from '../img/crarouselimg.png';
 import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
@@ -13,7 +13,7 @@ import { getAuth } from 'firebase/auth';
 
 function Home() {
   const [cards, setCards] = useState(null);
-
+  const navigate = useNavigate();
   const auth = getAuth();
   useEffect(() => {
     const colref = collection(db, 'cards');
@@ -76,9 +76,25 @@ function Home() {
         <div className="container">
           <p className="section-subtext">Recent Uploads</p>
           {cards?.length > 0 ? (
-            <div className="grid--3--cols" id="image-container">
-              <ListingItem cards={cards} />
-            </div>
+            <>
+              <div className="grid--3--cols" id="image-container">
+                <ListingItem
+                  cards={cards
+                    .slice(0, 6)
+                    .sort(
+                      (a, b) => b.timestamp.toDate() - a.timestamp.toDate()
+                    )}
+                />
+              </div>
+              <div className="text-center">
+                <button
+                  className="viewMore"
+                  onClick={() => navigate('/gallery')}
+                >
+                  View ballers mirror
+                </button>
+              </div>
+            </>
           ) : (
             <div className="error">
               <h1>Arts not Found</h1>
@@ -86,6 +102,7 @@ function Home() {
           )}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

@@ -1,29 +1,20 @@
 .section-footer {
   background-color: var(--primary-color);
-  padding: 9rem;
+  padding: 4rem 0;
+  bottom: 0;
   color: var(--white-color);
 }
-.ft-heading {
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyright {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.4rem;
 }
-.ft-box {
-  list-style: none;
+.ft-icons {
   display: flex;
-  flex-direction: column;
-}
-.ft-links:link,
-.ft-links:visited {
-  font-size: 1.3rem;
-  color: var(--white-color);
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-.ft-links:hover,
-.ft-links:active {
-  opacity: 0.8;
-}
-.ft-links:not(:last-child) {
-  margin-bottom: 1.2rem;
+  align-items: center;
 }

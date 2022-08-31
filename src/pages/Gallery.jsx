@@ -1,9 +1,8 @@
-import { FaSearch } from 'react-icons/fa';
+import { FaPlusCircle } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { db } from '../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
-import Spinner from '../components/Spinner';
 import ListingItem from '../components/Listingitem';
 
 function Gallery() {
@@ -42,8 +41,11 @@ function Gallery() {
           <div className="gallery-form">
             <div className="gallery-heading">BALLERS CLUB</div>
           </div>
-          <Link to="/adding" className="addBtnBaller">
-            Add art
+          <Link to="/adding" className="logout">
+            <div className="flex">
+              Add art
+              <FaPlusCircle />
+            </div>
           </Link>
         </div>
 
@@ -55,7 +57,11 @@ function Gallery() {
             </div>
           ) : cards && cards.length > 0 ? (
             <div className="grid--3--cols" id="image-container">
-              <ListingItem cards={cards} />
+              <ListingItem
+                cards={cards.sort(
+                  (a, b) => b.timestamp.toDate() - a.timestamp.toDate()
+                )}
+              />
             </div>
           ) : (
             <div className="error">

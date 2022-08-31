@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import { getAuth, updateCurrentUser, updateProfile } from 'firebase/auth';
-
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { updateDoc, doc, documentId, setDoc } from 'firebase/firestore';
+import { updateDoc, doc, setDoc } from 'firebase/firestore';
 import ListingItem from '../components/Listingitem';
-import { db } from '../firebase.config';
-import { toast } from 'react-toastify';
-import { useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+
 import useGetData from '../hooks/useGetData';
-import { FaSignOutAlt } from 'react-icons/fa';
-import { async } from '@firebase/util';
-import Spinner from '../components/Spinner';
+import { FaSignOutAlt, FaPen } from 'react-icons/fa';
+
 function Profile() {
   const auth = getAuth();
   const [changeDetails, setChangeDetails] = useState(false);
@@ -34,47 +28,36 @@ function Profile() {
       [e.target.id]: e.target.value,
     }));
   };
-
-  const onSubmit = async () => {
-    try {
-      if (auth.currentUser.displayName !== name) {
-        await updateProfile(auth.currentUser, {
-          displayName: name,
-        });
-
-        const userRef = doc(db, 'users', auth.currentUser.uid);
-        await updateDoc(userRef, {
-          name,
-        });
-
-        toast.success('updated!');
-        cards.filter((card) => card.discordId === name);
-      }
-      cards.forEach(async (card) => {
-        if (auth.currentUser.email === card.email) {
-          await updateProfile(auth.currentUser, {
-            discordId: name,
-          });
-          const colref = doc(db, 'cards', card.id);
-          await updateDoc(colref, {
-            discordId: name,
-          });
-        }
-      });
-    } catch (error) {
-      toast.error('Could not update');
-    }
-  };
-
+  if (loading) {
+    return (
+      <div className="error">
+        <h1>Loading......</h1>
+      </div>
+    );
+  }
   return (
     <>
       <div className="container">
         <div className="profile">
           <div className="profileHeader">
-            <p className="pageHeader">Baller Profile</p>
-            <button className="logout" type="button" onClick={onLogout}>
-              Logout <FaSignOutAlt />
-            </button>
+            <p className="pageHeader">Baller's Profile</p>
+            <div className="profile-btns">
+              <button className="logout" type="button" onClick={onLogout}>
+                <span className="flex">
+                  Logout <FaSignOutAlt />
+                </span>
+              </button>
+              <button
+                className="logout"
+                type="button"
+                onClick={(e) => navigate('/editPro')}
+              >
+                <span className="flex">
+                  UpdateProfile
+                  <FaPen />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
         <main>
@@ -88,7 +71,7 @@ function Profile() {
                 id="name"
                 type="text"
                 value={name}
-                disabled={!changeDetails}
+                disabled={true}
                 onChange={onChange}
               />
               <label>Email</label>
@@ -96,35 +79,26 @@ function Profile() {
                 type="text"
                 id="email"
                 value={email}
-                disabled={!changeDetails}
+                disabled={true}
                 onChange={onChange}
               />
             </form>
-            <button
-              className="changePersonalDetails"
-              onClick={() => {
-                changeDetails && onSubmit();
-                setChangeDetails((prevState) => !prevState);
-              }}
-            >
-              {changeDetails ? 'Done' : 'Update'}
-            </button>
           </div>
         </main>
         <div className="section">
           {loading ? (
+            <div className="error">
+              <h1>Loading....</h1>
+            </div>
+          ) : cards && cards.length > 0 ? (
             <>
               <p className="section-subtext">Baller arts</p>
-              <div className="error">
-                <h1>Loading....</h1>
+              <div className="grid--3--cols" id="image-container">
+                <ListingItem
+                  cards={cards.filter((card) => card.discordId === name)}
+                />
               </div>
             </>
-          ) : cards && cards.length > 0 ? (
-            <div className="grid--3--cols" id="image-container">
-              <ListingItem
-                cards={cards.filter((card) => card.discordId === name)}
-              />
-            </div>
           ) : (
             <div className="error">
               <h1>No art found</h1>

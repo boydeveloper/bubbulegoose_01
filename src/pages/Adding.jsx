@@ -54,7 +54,7 @@ function Adding() {
 
             return addDoc(docRef, formData);
           })
-          .then((res) => {
+          .then(() => {
             navigate('/gallery');
           })
           .catch((err) => {
@@ -70,7 +70,7 @@ function Adding() {
       <section className="add-section">
         <div className="Addart-box">
           <div className="text-center">
-            <div className="add-heading">ADD FAN ART💎</div>
+            <div className="add-heading">Add to the community💎</div>
           </div>
 
           <form onSubmit={onSubmit}>

@@ -5,7 +5,7 @@
 .profileHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding-top: 2rem;
 }
 .pageHeader {
   font-size: 3.96rem;
@@ -13,13 +13,15 @@
   color: var(--primary-color);
 }
 .logout {
+  text-decoration: none;
   color: var(--primary-color);
-  padding: 1.3rem 4rem;
+  padding: 1.3rem 2rem;
   background-color: transparent;
-  font-size: 2.6rem;
+  font-size: 2rem;
   transition: transform 0.3s;
   display: inline-block;
-  font-weight: 900;
+  font-weight: 600;
+  font-family: inherit;
   border: 0.2rem var(--black-color) solid;
   border-radius: 9px;
   transition: color 0.3s;
@@ -36,7 +38,11 @@
 }
 main {
   max-width: 60rem;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
+}
+aside {
+  max-width: 60rem;
+  margin: 0 auto;
 }
 .profileDetailsHeader {
   display: flex;
@@ -75,6 +81,11 @@ main {
   border: solid 0.2rem #000;
   transition: all 0.1s;
   font-family: inherit;
+}
+.profile-btns {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .profileCard input:focus {

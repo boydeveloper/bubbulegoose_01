@@ -67,9 +67,6 @@ function SignIn() {
                 value={password}
                 onChange={onChange}
               />
-              <Link to="/forgot-password" className="forgotPasswordLInk">
-                Forgot Password
-              </Link>
             </div>
             <button className="login-btn">Login</button>
             <OAuth />

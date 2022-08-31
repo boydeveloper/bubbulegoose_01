@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: #ff77f7;
   --black-color: #000;
@@ -116,7 +117,7 @@ h1 {
   color: var(--primary-color);
 }
 .gallery {
-  height: 100%;
+  /* padding: 10; */
 }
 .id p {
   font-size: 1.6rem;
@@ -125,6 +126,7 @@ h1 {
   display: flex;
   padding-top: 2rem;
   align-items: center;
+  margin-bottom: 4rem;
   justify-content: space-between;
 }
 .gallery-heading {
@@ -181,7 +183,11 @@ h1 {
 /* //////// PROFILE*/
 
 /*  */
-
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .menu-btn {
   font-size: 3.2rem;
   display: flex;
@@ -191,7 +197,6 @@ h1 {
   background-color: transparent;
   color: #fff;
   display: none;
-
   border-radius: 0.1rem;
 }
 .preloader {
@@ -208,7 +213,8 @@ h1 {
 }
 .error {
   text-align: center;
-  margin: 18rem 0;
+  padding: 18rem 0;
+  margin: auto 0;
 }
 .error h1 {
   font-size: 5rem;
@@ -230,5 +236,5 @@ h1 {
   color: var(--primary-color);
 }
 .section-mirrors {
-  padding-top: 10rem 0;
+  padding: 10rem 0;
 }

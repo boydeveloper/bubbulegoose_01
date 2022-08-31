@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Footer from './components/Footer';
-
 import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import SignUp from './pages/SignUp';
@@ -15,6 +14,7 @@ import Adding from './pages/Adding';
 import ForgotPassword from './pages/ForgotPassword';
 import Navbar from './components/Navbar';
 import Card from './pages/Card';
+import EditProfille from './pages/EditProfille';
 
 function App() {
   const [preloader, setPreloader] = useState(false);
@@ -48,10 +48,11 @@ function App() {
             </Route>
 
             <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/editPro" element={<EditProfille />} />
             <Route path="/card/:id" element={<Card />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
-          <Footer />
+
           <ToastContainer className="Toast" />
         </Router>
       )}

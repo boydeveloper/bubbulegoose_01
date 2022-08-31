@@ -13,9 +13,9 @@ function useGetData() {
         let cards = [];
         snapshot.docs.forEach((doc) => {
           cards.push({ ...doc.data(), id: doc.id });
+          setCards(cards);
+          setLoading(false);
         });
-        setCards(cards);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
