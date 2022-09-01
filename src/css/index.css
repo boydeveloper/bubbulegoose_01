@@ -19,11 +19,10 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  background-color: var(--white-color);
 }
 
 body {
-  background: var(--white-color);
+  background-color: var(--white-color);
   color: var(--black-color);
   font-family: 'Clash Display', sans-serif;
   font-weight: 400;
@@ -41,7 +40,6 @@ body::-webkit-scrollbar-thumb {
 }
 .App {
   background-color: var(--white-color);
-  height: 100vh;
 }
 .head {
   position: relative;
