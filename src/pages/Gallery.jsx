@@ -1,33 +1,12 @@
 import { FaPlusCircle } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
-import { db } from '../firebase.config';
-import { collection, getDocs } from 'firebase/firestore';
+
 import { Link } from 'react-router-dom';
 import ListingItem from '../components/Listingitem';
 import Spinner from '../components/Spinner';
+import useGetData from '../hooks/useGetData';
 
 function Gallery() {
-  const [cards, setCards] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
-
-  useEffect(() => {
-    console.log('hi');
-    const colref = collection(db, 'cards');
-    getDocs(colref)
-      .then((snapshot) => {
-        let cards = [];
-        snapshot.docs.forEach((doc) => {
-          cards.push({ ...doc.data(), id: doc.id });
-        });
-
-        setCards(cards);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const { cards, loading } = useGetData();
 
   return (
     <>

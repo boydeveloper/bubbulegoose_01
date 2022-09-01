@@ -11,14 +11,18 @@
   --black-color: #000;
   --white-color: #fff;
 }
+[theme='Dark'] {
+  --black-color: #fff;
+  --white-color: #000;
+}
 
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  /* overflow-y: scroll; */
 }
 
 body {
+  background: var(--white-color);
   color: var(--black-color);
   font-family: 'Clash Display', sans-serif;
   font-weight: 400;
@@ -33,6 +37,9 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   border-radius: 5rem;
+}
+.App {
+  background-color: var(--white-color);
 }
 .head {
   position: relative;
@@ -99,6 +106,8 @@ h1 {
 }
 .image-boxes {
   display: flex;
+
+  color: #000;
   flex-direction: column;
 }
 
@@ -111,7 +120,7 @@ h1 {
   padding: 6.8rem 0;
 }
 .id {
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--black-color);
   padding: 0.8rem;
   width: 100%;
 }
@@ -274,4 +283,7 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+.darkMode {
+  color: var(--white-color);
 }

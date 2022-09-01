@@ -10,16 +10,15 @@ import {
   uploadBytesResumable,
 } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import { getAuth, updateCurrentUser } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 function Adding() {
   const [handle, setHandle] = useState('');
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
   const auth = getAuth();
 
-  const [discordId, setDiscordId] = useState(auth.currentUser.displayName);
-  const [email, setEmail] = useState(auth.currentUser.email);
-
+  const [discordId, setDiscordId] = useState('');
+  const [email, setEmail] = useState('');
   const storage = getStorage();
   const navigate = useNavigate();
   if (loading) {
@@ -27,6 +26,7 @@ function Adding() {
   }
   const onSubmit = (e) => {
     e.preventDefault();
+    setEmail(auth.currentUser.email);
     const storageRef = ref(storage, `${image.name}--${uuidv4()}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
@@ -80,7 +80,7 @@ function Adding() {
                 type="text"
                 id="discordId"
                 value={discordId}
-                onChange={(e) => e.target.value}
+                onChange={(e) => setDiscordId(auth.currentUser.displayName)}
                 required
                 placeholder="weirdstoner.eth #6163"
               />

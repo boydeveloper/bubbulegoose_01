@@ -1,21 +1,17 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import { useState, useEffect } from 'react';
-import { db } from '../firebase.config';
-import { collection, getDocs } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import carouselImg from '../img/crarouselimg.png';
 import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
-import { getAuth } from 'firebase/auth';
+
 import Spinner from '../components/Spinner';
 import useGetData from '../hooks/useGetData';
 
 function Home() {
   const navigate = useNavigate();
-  const auth = getAuth();
   const { cards, loading } = useGetData();
 
   return (

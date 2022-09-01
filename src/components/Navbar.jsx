@@ -1,9 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
-function Navbar() {
+import Switchin from './Switch';
+function Navbar({ swithTheme, theme }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [openNav, setOpenav] = useState(false);
@@ -23,6 +24,10 @@ function Navbar() {
             </div>
 
             <ul className="nav-links">
+              <div onClick={swithTheme}>
+                <Switchin />
+              </div>
+
               <li className="nav-link margin">
                 <Link to="/gallery" className="nav-item">
                   Ballers mirror

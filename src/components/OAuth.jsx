@@ -1,21 +1,14 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvide,
-  GoogleAuthProvider,
-} from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 import { FaGoogle } from 'react-icons/fa';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import googleicon from '../img/google-icon.png';
-import { async } from '@firebase/util';
+
 import { toast } from 'react-toastify';
 
 function OAuth() {
   const navigate = useNavigate();
-  const location = useLocation();
   const onGoogleClick = async () => {
     try {
       const auth = getAuth();

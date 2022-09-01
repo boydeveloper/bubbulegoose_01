@@ -1,22 +1,20 @@
 import { useState } from 'react';
-import { getAuth, updateCurrentUser, updateProfile } from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { updateDoc, doc } from 'firebase/firestore';
-import ListingItem from '../components/Listingitem';
+
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
-import { useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+
 import useGetData from '../hooks/useGetData';
-import Spinner from '../components/Spinner';
 
 function EditProfille() {
   const auth = getAuth();
   const navigate = useNavigate();
   const [name, setName] = useState('');
-  const { cards, loading } = useGetData();
+  const { cards } = useGetData();
 
   const onChange = (e) => {
     setName(e.target.value);
@@ -62,7 +60,7 @@ function EditProfille() {
   return (
     <div className="container">
       <div className="section-mirrors">
-        <Link to="/profile" className="backLink">
+        <Link to="/myProfile" className="backLink">
           &larr;back
         </Link>
         <aside>

@@ -5,7 +5,6 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import OAuth from '../components/OAuth';
 import heroimage from '../img/heroimage.png';
 
-import { async } from '@firebase/util';
 function SignIn() {
   const [formData, setFormData] = useState({
     email: '',

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { getAuth, updateCurrentUser, updateProfile } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { updateDoc, doc, setDoc } from 'firebase/firestore';
+
 import ListingItem from '../components/Listingitem';
 
 import useGetData from '../hooks/useGetData';
@@ -9,7 +9,6 @@ import { FaSignOutAlt, FaPen } from 'react-icons/fa';
 
 function Profile() {
   const auth = getAuth();
-  const [changeDetails, setChangeDetails] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 function Footer() {
   const newDate = new Date();

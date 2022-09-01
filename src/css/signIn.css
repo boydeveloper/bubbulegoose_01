@@ -9,6 +9,7 @@
 .move-center h1 {
   font-size: 4.8rem;
   margin-bottom: 1rem;
+  color: var(--black-color);
   font-weight: 700;
 }
 .move-center p {
@@ -20,11 +21,12 @@
   margin-bottom: 2rem;
   font-size: 3rem;
   font-weight: 600;
+  color: var(--black-color);
 }
 .form-box input {
   background: #ff77f7;
   box-shadow: rgba(0, 0, 0, 0.11);
-  border: 0.2rem solid #000000;
+  border: 0.2rem solid var(--black-color);
   border-radius: 1rem;
   outline: none;
   padding: 1.6rem 2rem;
@@ -35,7 +37,7 @@
   font-weight: 600;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #ffff;
+  background-color: var(--white-color);
   border: none;
   font-weight: bolder;
   color: var(--primary-color);
