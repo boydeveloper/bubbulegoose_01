@@ -41,13 +41,13 @@ function App() {
 
   return (
     <>
-      {preloader ? (
-        <div className="preloader">
-          <BarLoader color={'#fff'} width="200" height={10} size={40} />
-        </div>
-      ) : (
-        <Router>
-          <div className="App" theme={theme}>
+      <div className="App" theme={theme}>
+        {preloader ? (
+          <div className="preloader">
+            <BarLoader color={'#fff'} width="200" height={10} size={40} />
+          </div>
+        ) : (
+          <Router>
             <Navbar swithTheme={swithTheme} theme={theme} />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -64,10 +64,10 @@ function App() {
               <Route path="/profileSettings" element={<EditProfile />} />
               <Route path="/profile/:id" element={<ViewProfile />} />
             </Routes>
-          </div>
-          <ToastContainer className="Toast" />
-        </Router>
-      )}
+            <ToastContainer className="Toast" />
+          </Router>
+        )}
+      </div>
     </>
   );
 }

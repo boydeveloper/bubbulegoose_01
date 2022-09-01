@@ -19,6 +19,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  background-color: var(--white-color);
 }
 
 body {
@@ -40,6 +41,7 @@ body::-webkit-scrollbar-thumb {
 }
 .App {
   background-color: var(--white-color);
+  height: 100vh;
 }
 .head {
   position: relative;

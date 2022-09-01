@@ -15,6 +15,7 @@
 .move-center p {
   font-size: 3rem;
   margin-bottom: 5rem;
+  color: var(--black-color);
   display: block;
 }
 .form-box label {
@@ -81,8 +82,9 @@
   gap: 0.5rem;
   cursor: pointer;
   font-size: 3rem;
+  color: var(--black-color);
   background-color: var(--white-color);
-  border: 1px solid #000;
+  border: 1px solid var(--black-color);
   font-weight: 600;
   border-radius: 10px;
   padding: 1.7rem 0;
@@ -90,6 +92,7 @@
 }
 .precaution-text {
   font-size: 1.9rem;
+  color: var(--black-color);
 }
 .signup-link:link,
 .signup-link:visited {
