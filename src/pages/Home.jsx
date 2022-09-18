@@ -6,13 +6,15 @@ import carouselImg from '../img/crarouselimg.png';
 import carouselImg2 from '../img/curry2.jpg';
 import carouselImg3 from '../img/curry3.jpg';
 import ListingItem from '../components/Listingitem';
-
+import { useDarkMode } from '../context/ContextDarkmode';
 import Spinner from '../components/Spinner';
 import useGetData from '../hooks/useGetData';
 
 function Home() {
   const navigate = useNavigate();
   const { cards, loading } = useGetData();
+  const { themeD } = useDarkMode();
+  console.log(themeD);
 
   return (
     <>

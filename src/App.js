@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import BarLoader from 'react-spinners/BarLoader';
 import { ToastContainer } from 'react-toastify';
-
+import { DarkmodeContext, useDarkMode } from './context/ContextDarkmode';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {
@@ -17,21 +17,11 @@ import {
 } from './pages/index';
 import PrivateRoute from './components/PrivateRoute';
 import Navbar from './components/Navbar';
-import useLocalStorage from 'use-local-storage';
+import Switchin from './components/switch/Switch';
 
 function App() {
   const [preloader, setPreloader] = useState(false);
-  const defaultDark = window.matchMedia('(prefers-color-scheme: Dark)').matches;
-  const [theme, setTheme] = useLocalStorage(
-    'theme',
-    defaultDark ? 'Dark' : 'light'
-  );
-  const swithTheme = () => {
-    const newTheme = theme === 'light' ? 'Dark' : 'light';
-
-    setTheme(newTheme);
-  };
-
+  const { theme } = useDarkMode();
   useEffect(() => {
     setPreloader(true);
     setTimeout(() => {
@@ -48,7 +38,7 @@ function App() {
           </div>
         ) : (
           <Router>
-            <Navbar swithTheme={swithTheme} theme={theme} />
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sign-up" element={<SignUp />} />
@@ -64,6 +54,9 @@ function App() {
               <Route path="/profileSettings" element={<EditProfile />} />
               <Route path="/profile/:id" element={<ViewProfile />} />
             </Routes>
+            <div className="theme">
+              <Switchin />
+            </div>
             <ToastContainer className="Toast" />
           </Router>
         )}

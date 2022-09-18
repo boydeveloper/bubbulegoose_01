@@ -13,9 +13,13 @@
 }
 [theme='Dark'] {
   --black-color: #fff;
-  --white-color: #000;
+  --white-color: #120d18;
 }
 
+@font-face {
+  font-family: Knicknack;
+  src: url('../../font/Knicknack.otf');
+}
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -24,7 +28,7 @@ html {
 body {
   background-color: var(--white-color);
   color: var(--black-color);
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Knicknack', sans-serif;
   font-weight: 400;
   height: 100vh;
   position: relative;
