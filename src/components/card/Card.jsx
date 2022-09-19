@@ -1,7 +1,7 @@
 import { FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
-function ListingItem({ cards }) {
+import './card.css';
+function Card({ cards }) {
   return (
     <>
       {cards.map((card) => {
@@ -26,4 +26,4 @@ function ListingItem({ cards }) {
   );
 }
 
-export default ListingItem;
+export default Card;

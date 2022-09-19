@@ -1,6 +1,6 @@
+import './navbar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -24,9 +24,14 @@ function Navbar() {
             </div>
 
             <ul className="nav-links">
+              <li className="nav-link">
+                <Link to="/" className="nav-item">
+                  Ballers mirror
+                </Link>
+              </li>
               <li className="nav-link margin">
                 <Link to="/gallery" className="nav-item">
-                  Ballers mirror
+                  Drops
                 </Link>
               </li>
               <li className="nav-link">

@@ -9,11 +9,9 @@ export const DarkmodeContext = ({ children }) => {
     'theme',
     defaultDark ? 'Dark' : 'light'
   );
-  console.log(theme);
   const swithTheme = () => {
     const newTheme = theme === 'light' ? 'Dark' : 'light';
     setTheme(newTheme);
-    console.log('lolllllllllll');
   };
   return (
     <Context.Provider

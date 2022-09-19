@@ -1,0 +1,86 @@
+.profile {
+  margin: 0 auto;
+  padding: 3.2rem 0;
+}
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+.profileDetailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profileDetailsText {
+  font-size: 2.5rem;
+  color: var(--white-color);
+}
+.pageHeader {
+  font-size: 3.96rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.profile-btns {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  flex-direction: column;
+}
+.profile-btn {
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: 0.2rem var(--black-color) solid;
+  border-radius: 9px;
+}
+.settings {
+  position: relative;
+}
+.none {
+  display: none;
+}
+.settingsBtn {
+  font-size: 4rem;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999999;
+}
+.settingsOverlay {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background: var(--primary-color);
+}
+
+main {
+  max-width: 60rem;
+  margin-bottom: 6rem;
+}
+.form label {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--black-color);
+  font-weight: 600;
+}
+.form input {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 1.2rem 1rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white-color);
+  margin: 2rem 0;
+  border-radius: 1rem;
+  border: solid 0.2rem #000;
+  transition: all 0.1s;
+  font-family: inherit;
+}

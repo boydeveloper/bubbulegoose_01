@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import useAuthStatus from '../hooks/useAuthStatus';
-import Spinner from './Spinner';
+import Spinner from './Preloader';
 const PrivateRoute = () => {
   const { loggedIn, checkingStatus } = useAuthStatus();
 

@@ -1,19 +1,17 @@
-import React from 'react';
+import './viewProfile.css';
 import { useParams } from 'react-router-dom';
-import useGetData from '../hooks/useGetData';
-import ListingItem from '../components/Listingitem';
-import Spinner from '../components/Spinner';
+import useGetData from '../../hooks/useGetData';
+import ListingItem from '../../components/card/Card';
+import Spinner from '../../utils/Preloader';
 
 function ViewProfile() {
   const { id } = useParams();
   const { cards, loading } = useGetData();
-
   return (
     <div className="container">
       <div className="viewPro-header">
         <div className="gallery-heading">Baller💎 {id}!</div>
       </div>
-
       <section className="section-mirrors">
         <p className="section-subtext">Baller's drop</p>
         {loading ? (

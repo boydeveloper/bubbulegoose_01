@@ -1,0 +1,23 @@
+.updateProfile {
+  height: 100vh;
+}
+.updateBtn {
+  border: none;
+  background: none;
+  border: solid var(--primary-color) 0.3rem;
+  border-radius: 0.8rem;
+  font-size: 2.5rem;
+  font-family: inherit;
+  padding: 2rem 6rem;
+  color: var(--black-color);
+}
+aside {
+  text-align: center;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.backLink:link,
+.backLink:visited {
+  font-size: 2rem;
+  color: var(--primary-color);
+}

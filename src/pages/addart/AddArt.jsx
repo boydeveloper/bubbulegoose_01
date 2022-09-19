@@ -1,7 +1,7 @@
+import './addArt.css';
 import { useState } from 'react';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import Spinner from '../components/Spinner';
-import { db } from '../firebase.config';
+import { db } from '../../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import {
   getStorage,
@@ -11,19 +11,17 @@ import {
 } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from 'firebase/auth';
-function Adding() {
+function AddArt() {
   const [handle, setHandle] = useState('');
   const [image, setImage] = useState();
-  const [loading, setLoading] = useState(false);
+
   const auth = getAuth();
 
   const [discordId, setDiscordId] = useState('');
   const [email, setEmail] = useState('');
   const storage = getStorage();
   const navigate = useNavigate();
-  if (loading) {
-    return <Spinner />;
-  }
+
   const onSubmit = (e) => {
     e.preventDefault();
     setEmail(auth.currentUser.email);
@@ -49,9 +47,7 @@ function Adding() {
               image: downloadURL,
               timestamp: serverTimestamp(),
             };
-
             const docRef = collection(db, 'cards');
-
             return addDoc(docRef, formData);
           })
           .then(() => {
@@ -62,9 +58,7 @@ function Adding() {
           });
       }
     );
-    setLoading(true);
   };
-
   return (
     <>
       <section className="add-section">
@@ -119,4 +113,4 @@ function Adding() {
   );
 }
 
-export default Adding;
+export default AddArt;

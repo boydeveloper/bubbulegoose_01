@@ -1,25 +1,18 @@
+import './updateprofile.css';
 import { useState } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
-
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { updateDoc, doc } from 'firebase/firestore';
-
-import { db } from '../firebase.config';
+import { db } from '../../firebase.config';
 import { toast } from 'react-toastify';
+import useGetData from '../../hooks/useGetData';
 
-import useGetData from '../hooks/useGetData';
-
-function EditProfille() {
+function UpdateProfile() {
   const auth = getAuth();
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const { cards } = useGetData();
-
-  const onChange = (e) => {
-    setName(e.target.value);
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,17 +20,10 @@ function EditProfille() {
         await updateProfile(auth.currentUser, {
           displayName: name,
         });
-
         const userRef = doc(db, 'users', auth.currentUser.uid);
         await updateDoc(userRef, {
           name,
-        })
-          .then((res) => {
-            toast.success('updated!');
-          })
-          .then(() => {
-            navigate('/profile');
-          });
+        });
       }
       cards.forEach(async (card) => {
         if (auth.currentUser.email === card.email) {
@@ -49,7 +35,7 @@ function EditProfille() {
             discordId: name,
           }).then(() => {
             toast.success('updated!');
-            navigate('/profile');
+            navigate('/myProfile');
           });
         }
       });
@@ -58,7 +44,7 @@ function EditProfille() {
     }
   };
   return (
-    <div className="container">
+    <div className="container updateProfile">
       <div className="section-mirrors">
         <Link to="/myProfile" className="backLink">
           &larr;back
@@ -74,11 +60,11 @@ function EditProfille() {
                 id="name"
                 type="text"
                 value={name}
-                onChange={onChange}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
 
-              <button className="changePersonalDetails" type="submit">
+              <button className="updateBtn" type="submit">
                 Update Discord
               </button>
             </form>
@@ -89,4 +75,4 @@ function EditProfille() {
   );
 }
 
-export default EditProfille;
+export default UpdateProfile;

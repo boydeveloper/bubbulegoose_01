@@ -1,7 +1,6 @@
 .theme {
   position: fixed;
-  bottom: 20%;
-  background-color: red;
-  right: 1%;
+  bottom: 25%;
+  right: 2.5%;
   cursor: pointer;
 }

@@ -1,65 +1,55 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import BarLoader from 'react-spinners/BarLoader';
 import { ToastContainer } from 'react-toastify';
-import { DarkmodeContext, useDarkMode } from './context/ContextDarkmode';
+import { useDarkMode } from './context/ContextDarkmode';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {
   Adding,
-  Gallery,
-  EditProfile,
+  UpdateProfile,
   Home,
   Profile,
   ViewProfile,
   SignUp,
   SignIn,
+  Gallery,
 } from './pages/index';
-import PrivateRoute from './components/PrivateRoute';
-import Navbar from './components/Navbar';
+
+import PrivateRoute from './utils/PrivateRoute';
+import { Navbar, Footer } from './components/index';
 import Switchin from './components/switch/Switch';
+import { useLayoutEffect } from 'react';
 
 function App() {
-  const [preloader, setPreloader] = useState(false);
   const { theme } = useDarkMode();
-  useEffect(() => {
-    setPreloader(true);
-    setTimeout(() => {
-      setPreloader(false);
-    }, 3000);
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
-
   return (
     <>
       <div className="App" theme={theme}>
-        {preloader ? (
-          <div className="preloader">
-            <BarLoader color={'#fff'} width="200" height={10} size={40} />
-          </div>
-        ) : (
-          <Router>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/adding" element={<PrivateRoute />}>
-                <Route path="/adding" element={<Adding />} />
-              </Route>
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/myProfile" element={<PrivateRoute />}>
-                <Route path="/myProfile" element={<Profile />} />
-              </Route>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/adding" element={<PrivateRoute />}>
+              <Route path="/adding" element={<Adding />} />
+            </Route>
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/myProfile" element={<PrivateRoute />}>
+              <Route path="/myProfile" element={<Profile />} />
+            </Route>
 
-              <Route path="/sign-in" element={<SignIn />} />
-              <Route path="/profileSettings" element={<EditProfile />} />
-              <Route path="/profile/:id" element={<ViewProfile />} />
-            </Routes>
-            <div className="theme">
-              <Switchin />
-            </div>
-            <ToastContainer className="Toast" />
-          </Router>
-        )}
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/profileSettings" element={<UpdateProfile />} />
+            <Route path="/profile/:id" element={<ViewProfile />} />
+          </Routes>
+          <div className="theme">
+            <Switchin />
+          </div>
+          <Footer />
+          <ToastContainer className="Toast" />
+        </Router>
       </div>
     </>
   );

@@ -1,20 +1,20 @@
 import './switch.css';
 import { useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
 import { useDarkMode } from '../../context/ContextDarkmode';
 function Switchin() {
   const { swithTheme } = useDarkMode();
-  const [light, setLight] = useState(true);
+  const [spin, setSpin] = useState(false);
   return (
     <>
       <div
-        className="darkMode"
+        className={spin ? 'spin darkModeCircle' : 'darkModeCircle'}
         onClick={() => {
-          setLight(!light);
+          setSpin(!spin);
           swithTheme();
         }}
       >
-        {light ? <FaSun size={30} /> : <FaMoon size={30} />}
+        <span className="left"></span>
+        <span className="right"></span>
       </div>
     </>
   );

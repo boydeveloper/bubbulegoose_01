@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import heroimage from '../img/heroimage.png';
+import heroimage from '../../img/heroimage.png';
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase.config';
-import Spinner from '../components/Spinner';
+import { db } from '../../firebase.config';
+import Spinner from '../../utils/Preloader';
 function SignUp() {
   const [formData, setFormData] = useState({
     email: '',
