@@ -1,10 +1,9 @@
 import './profile.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../../components/card/Card';
 import useGetData from '../../hooks/useGetData';
-import { FaSignOutAlt, FaPen } from 'react-icons/fa';
 
 function Profile() {
   const auth = getAuth();
@@ -15,7 +14,6 @@ function Profile() {
   });
   const [display, setDisplay] = useState(false);
   const { name, email } = formData;
-
   const { cards, loading } = useGetData();
   const onLogout = () => {
     auth.signOut();

@@ -23,14 +23,14 @@ function Header() {
               <Carousel>
                 <div>
                   <img
-                    src={carouselImg}
+                    src={carouselImg2}
                     className="hero-image"
                     alt="carousel img"
                   />
                 </div>
                 <div>
                   <img
-                    src={carouselImg2}
+                    src={carouselImg}
                     className="hero-image"
                     alt="carousel img"
                   />
