@@ -25,7 +25,7 @@ function Navbar() {
 
             <ul className="nav-links">
               <li className="nav-link">
-                <Link to="/" className="nav-item">
+                <Link to="/turf" className="nav-item">
                   Turf
                 </Link>
               </li>

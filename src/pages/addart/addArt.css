@@ -56,3 +56,20 @@
 .file {
   margin-bottom: 2rem;
 }
+@media (max-width: 945px) {
+  .Addart-box {
+    padding: 2rem 3rem;
+  }
+  .add-heading {
+    /* font-size: 4; */
+  }
+}
+@media (max-width: 577px) {
+  .add-heading {
+    font-size: 3.2rem;
+  }
+  .add input::placeholder {
+    color: var(--white-color);
+    font-size: 2rem;
+  }
+}

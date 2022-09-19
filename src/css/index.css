@@ -151,28 +151,7 @@ h1 {
 .darkMode {
   color: var(--white-color);
 }
-.darkModeCircle {
-  content: '';
-  display: block;
-  display: flex;
-  height: 2.7rem;
-  width: 2.7rem;
-  border-radius: 50%;
-  overflow: hidden;
-  border: solid var(--primary-color) 0.2rem;
-}
-.spin {
-  animation: spin 0.3s;
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(180);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
 
 .left {
   content: '';
@@ -181,9 +160,18 @@ h1 {
   width: 50%;
   background-color: var(--black-color);
 }
+@media (max-width: 945px) {
+  .grid--3--cols {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
 @media (max-width: 577px) {
   .section-mirrors {
     padding: 5rem 0;
+  }
+  .grid--3--cols {
+    grid-template-columns: 1fr;
   }
   .container {
     padding: 0 2rem;

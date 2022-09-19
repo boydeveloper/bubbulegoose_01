@@ -40,3 +40,15 @@
 .twitter-details:hover {
   color: var(--primary-color);
 }
+@media (max-width: 577px) {
+  .heading-primary {
+    font-size: 5rem;
+  }
+  .grid--3--cols {
+    grid-template-columns: 1fr;
+  }
+  .image-boxes {
+    width: 100%;
+    max-width: 100%;
+  }
+}

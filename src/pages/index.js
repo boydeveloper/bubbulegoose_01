@@ -6,3 +6,4 @@ export { default as Home } from './Home';
 export { default as Profile } from './profile/Profile';
 export { default as SignIn } from './signIn/SignIn';
 export { default as SignUp } from './signUp/SignUp';
+export {default as Turf} from './turf/Turf'

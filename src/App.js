@@ -12,6 +12,7 @@ import {
   SignUp,
   SignIn,
   Gallery,
+  Turf,
 } from './pages/index';
 
 import PrivateRoute from './utils/PrivateRoute';
@@ -41,6 +42,7 @@ function App() {
             </Route>
 
             <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/turf" element={<Turf />} />
             <Route path="/profileSettings" element={<UpdateProfile />} />
             <Route path="/profile/:id" element={<ViewProfile />} />
           </Routes>

@@ -1,9 +1,8 @@
 import './header.css';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
-import carouselImg from '../../img/crarouselimg.png';
-import carouselImg2 from '../../img/curry2.jpg';
-import carouselImg3 from '../../img/curry3.jpg';
+import carouselImg from '../../assets/img/crarouselimg.png';
+import carouselImg2 from '../../assets/img/bubble1.jpeg';
 
 function Header() {
   return (
@@ -32,13 +31,6 @@ function Header() {
                 <div>
                   <img
                     src={carouselImg2}
-                    className="hero-image"
-                    alt="carousel img"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={carouselImg3}
                     className="hero-image"
                     alt="carousel img"
                   />

@@ -4,3 +4,25 @@
   right: 2.5%;
   cursor: pointer;
 }
+.darkModeCircle {
+  content: '';
+  display: block;
+  display: flex;
+  height: 2.7rem;
+  width: 2.7rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid var(--primary-color) 0.2rem;
+}
+.spin {
+  animation: spin 0.3s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(180);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

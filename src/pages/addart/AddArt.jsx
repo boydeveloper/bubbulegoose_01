@@ -12,12 +12,13 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from 'firebase/auth';
 function AddArt() {
-  const [handle, setHandle] = useState('');
   const [image, setImage] = useState();
 
   const auth = getAuth();
 
-  const [discordId, setDiscordId] = useState('');
+  const [handle, setHandle] = useState('');
+
+  const [discordId, setDiscordId] = useState(auth.currentUser.displayName);
   const [email, setEmail] = useState('');
   const storage = getStorage();
   const navigate = useNavigate();
@@ -29,11 +30,7 @@ function AddArt() {
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
       'state_changed',
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is' + progress + '% done');
-      },
+      (snapshot) => {},
       (error) => {
         console.log(error.message);
       },
@@ -66,7 +63,6 @@ function AddArt() {
           <div className="text-center">
             <div className="add-heading">Add to the community💎</div>
           </div>
-
           <form onSubmit={onSubmit}>
             <div className="add">
               <label htmlFor="discordId">Discordid</label>
@@ -74,9 +70,8 @@ function AddArt() {
                 type="text"
                 id="discordId"
                 value={discordId}
-                onChange={(e) => setDiscordId(auth.currentUser.displayName)}
+                onChange={(e) => setDiscordId(discordId)}
                 required
-                placeholder="weirdstoner.eth #6163"
               />
             </div>
             <div className="add">

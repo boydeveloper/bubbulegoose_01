@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import heroimage from '../../img/heroimage.png';
+import heroimage from '../../assets/img/heroimage.png';
 import {
   getAuth,
   createUserWithEmailAndPassword,
