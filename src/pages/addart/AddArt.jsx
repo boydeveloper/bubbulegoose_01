@@ -47,12 +47,11 @@ function AddArt() {
             const docRef = collection(db, 'cards');
             return addDoc(docRef, formData);
           })
-          .then(() => {
-            navigate('/gallery');
-          })
+          .then(() => {})
           .catch((err) => {
             console.log(`error`, err);
           });
+        navigate('/gallery');
       }
     );
   };
