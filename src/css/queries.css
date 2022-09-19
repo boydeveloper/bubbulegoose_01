@@ -1,4 +1,7 @@
 @media (max-width: 1020px) {
+  html {
+    font-size: 59%;
+  }
   .login-form,
   .sign-form {
     flex-direction: column;
@@ -46,9 +49,6 @@
   }
 }
 @media (max-width: 500px) {
-  html {
-    font-size: 42%;
-  }
   .hero-section {
     padding: 2.4rem 0;
   }

@@ -84,3 +84,20 @@ main {
   transition: all 0.1s;
   font-family: inherit;
 }
+@media (max-width: 945px) {
+  .pageHeader {
+    font-size: 3.2rem;
+  }
+  .settingsOverlay {
+    padding: 1rem;
+    top: 4rem;
+    right: 0;
+  }
+  .profile-btns {
+    gap: 0.5rem;
+  }
+  .profile-btn {
+    padding: 0.7rem;
+    font-size: 1.2rem;
+  }
+}

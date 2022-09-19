@@ -19,3 +19,13 @@
   color: var(--black-color);
   align-items: center;
 }
+@media (max-width: 577px) {
+  .gallery-heading {
+    font-size: 3.2rem;
+  }
+  .logout:link,
+  .logout:visited {
+    padding: 1rem;
+    font-size: 1.9rem;
+  }
+}

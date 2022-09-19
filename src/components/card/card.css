@@ -1,0 +1,42 @@
+.image-boxes {
+  display: flex;
+  color: #000;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 39.7rem;
+}
+
+.id {
+  border: 1px solid var(--black-color);
+  padding: 0.8rem;
+  width: 100%;
+}
+.discord:visited,
+.discord:link {
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: var(--black-color);
+  transition: color 0.3s;
+  font-weight: 600;
+}
+.discord:hover {
+  color: var(--primary-color);
+}
+
+.id p {
+  font-size: 1.6rem;
+}
+
+.twitter-details {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  color: var(--black-color);
+}
+.twitter-details:hover {
+  color: var(--primary-color);
+}

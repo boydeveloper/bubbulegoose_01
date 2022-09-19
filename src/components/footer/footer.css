@@ -1,10 +1,3 @@
-.footer {
-  padding-bottom: 4rem;
-  /* background-color: var(--primary-color); */
-}
-.ft-logo {
-  margin-bottom: 2.4rem;
-}
 .grid-4-cols {
   display: flex;
   justify-content: space-between;
@@ -18,7 +11,7 @@
   margin-bottom: 2.6rem;
 }
 .ft-text {
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 2.4rem;
   color: var(--black-color);
   width: 100%;
@@ -26,23 +19,18 @@
   margin-bottom: 3rem;
 }
 .ft-links {
-  list-style: none;
-  line-height: 2.4rem;
-}
-.ft-link:not(:last-child) {
-  margin-bottom: 1.5rem;
-  color: var(--black-color);
-}
-.search {
-  border: solid 1px var(--black-color);
-  box-shadow: 0 0.4rem 6rem rgba(40, 55, 79, 0.1);
-  width: 100%;
   display: flex;
-  padding: 0.6rem;
   align-items: center;
-  border-radius: 1rem;
+  gap: 1.2rem;
+  justify-content: center;
 }
 
+.ft-link:link,
+.ft-link:visited {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  color: var(--primary-color);
+}
 .search input {
   border: none;
   position: relative;
@@ -100,31 +88,4 @@
   font-size: 1.6rem;
   color: var(--black-color);
   border-top: solid 0.1rem var(--black-color);
-}
-/* QUIRIES */
-@media (max-width: 1056px) {
-  .grid-4-cols {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .search button {
-    padding: 1.7rem 2.5rem;
-  }
-}
-@media (max-width: 768px) {
-  /* .grid-4-cols {
-    grid-template-columns: 1fr;
-  } */
-  .ft-box-1 {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-  .ft-box-2 {
-    grid-row: 2;
-  }
-  .ft-box-3 {
-    grid-row: 2;
-  }
-  .ft-box-4 {
-    grid-row: 3;
-  }
 }

@@ -71,8 +71,14 @@
   }
 }
 @media (max-width: 577px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  .text-box {
+    padding-top: 0;
+  }
   .heading-primary {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
   .viewMore {
     padding: 1.3rem 4rem;

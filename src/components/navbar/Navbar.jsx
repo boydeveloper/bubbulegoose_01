@@ -26,12 +26,12 @@ function Navbar() {
             <ul className="nav-links">
               <li className="nav-link">
                 <Link to="/" className="nav-item">
-                  Ballers mirror
+                  Turf
                 </Link>
               </li>
               <li className="nav-link margin">
                 <Link to="/gallery" className="nav-item">
-                  Drops
+                  Mirror
                 </Link>
               </li>
               <li className="nav-link">

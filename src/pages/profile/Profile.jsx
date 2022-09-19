@@ -53,19 +53,14 @@ function Profile() {
                     type="button"
                     onClick={onLogout}
                   >
-                    <span className="flex">
-                      Logout <FaSignOutAlt />
-                    </span>
+                    Logout
                   </button>
                   <button
                     className="profile-btn"
                     type="button"
                     onClick={() => navigate('/profileSettings')}
                   >
-                    <span className="flex">
-                      UpdateProfile
-                      <FaPen />
-                    </span>
+                    UpdateProfile
                   </button>
                 </div>
               </div>

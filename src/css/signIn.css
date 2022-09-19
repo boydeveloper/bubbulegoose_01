@@ -1,7 +1,6 @@
 .login-form {
   display: flex;
   padding: 3.2rem 0;
-  height: 100vh;
 }
 .form-box {
   display: flex;

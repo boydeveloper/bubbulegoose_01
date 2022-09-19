@@ -1,6 +1,6 @@
+import './card.css';
 import { FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './card.css';
 function Card({ cards }) {
   return (
     <>
