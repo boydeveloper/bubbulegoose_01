@@ -15,6 +15,10 @@
   --white-color: #120d18;
 }
 @font-face {
+  font-family: knickReg;
+  src: url('../../font/knickReg.otf');
+}
+@font-face {
   font-family: Knicknack;
   src: url('../../font/Knicknack.otf');
 }
@@ -91,10 +95,7 @@ h1 {
 .align-center {
   text-align: center;
 }
-.Toast {
-  font-size: 1.8rem;
-  font-weight: bolder;
-}
+
 
 .flex {
   display: flex;
@@ -120,15 +121,6 @@ h1 {
 .section-mirrors {
   padding: 10rem 0;
 }
-.loadingSpinnerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
 
 .section-heading {
   font-size: 6.8rem;
@@ -140,18 +132,10 @@ h1 {
   font-weight: 600;
   margin-bottom: 1rem;
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 .darkMode {
   color: var(--white-color);
 }
-
 
 .left {
   content: '';

@@ -17,8 +17,8 @@ function Footer() {
                   carl jones.
                 </a>
                 <p>
-                  Nb:Not claiming ownership of any of the arts,this is just a
-                  demo
+                  Nb:Not claiming ownership of any of the arts displayed,this is
+                  just a demo
                 </p>
               </div>
               <div className="ft-links">

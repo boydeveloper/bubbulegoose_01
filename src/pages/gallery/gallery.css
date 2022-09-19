@@ -12,7 +12,7 @@
 .logout:link,
 .logout:visited {
   font-size: 2.5rem;
-  text-decoration: wavy;
+  font-family: 'knickReg';
   border: 0.3rem solid var(--primary-color);
   padding: 1.3rem;
   display: flex;

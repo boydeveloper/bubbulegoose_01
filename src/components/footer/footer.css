@@ -13,6 +13,7 @@
 .ft-text {
   font-size: 2rem;
   line-height: 2.4rem;
+  font-family: 'knickReg';
   color: var(--black-color);
   width: 100%;
   font-weight: 400;
@@ -31,17 +32,7 @@
   margin-left: 1rem;
   color: var(--primary-color);
 }
-.search input {
-  border: none;
-  position: relative;
-  background: none;
-  font-family: inherit;
-  padding: 1.8rem 2rem;
-}
-.search input::placeholder {
-  font-weight: inherit;
-  font-size: 1.4rem;
-}
+
 .search input:focus {
   outline: none;
 }

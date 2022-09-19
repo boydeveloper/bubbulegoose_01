@@ -16,6 +16,7 @@
 }
 .discord:visited,
 .discord:link {
+  font-family: 'knickReg';
   font-size: 2.4rem;
   text-decoration: none;
   color: var(--black-color);
@@ -28,9 +29,11 @@
 
 .id p {
   font-size: 1.6rem;
+  font-family: 'knickReg';
 }
 
 .twitter-details {
+  font-family: 'knickReg';
   display: flex;
   align-items: center;
   gap: 0.4rem;
