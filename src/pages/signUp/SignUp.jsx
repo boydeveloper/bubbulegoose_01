@@ -32,7 +32,7 @@ function SignUp() {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error('passwords do not Match ');
+      toast.error('passwords do not Match');
     }
     if (password.length <= 6) {
       toast.error('password should exceed 6 characters!');

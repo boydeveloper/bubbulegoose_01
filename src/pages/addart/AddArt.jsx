@@ -9,8 +9,10 @@ import {
   getDownloadURL,
   uploadBytesResumable,
 } from 'firebase/storage';
+import useGetData from '../../hooks/useGetData';
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from 'firebase/auth';
+import Preloader from '../../utils/Preloader';
 function AddArt() {
   const [image, setImage] = useState();
 
@@ -22,7 +24,10 @@ function AddArt() {
   const [email, setEmail] = useState('');
   const storage = getStorage();
   const navigate = useNavigate();
-
+  const [loading, setLoading] = useState(null);
+  if (loading) {
+    return <Preloader />;
+  }
   const onSubmit = (e) => {
     e.preventDefault();
     setEmail(auth.currentUser.email);
@@ -46,12 +51,16 @@ function AddArt() {
             };
             const docRef = collection(db, 'cards');
             return addDoc(docRef, formData);
+            setLoading(true);
           })
-          .then(() => {})
+
+          .then(() => {
+            setLoading(false);
+            navigate('/gallery');
+          })
           .catch((err) => {
             console.log(`error`, err);
           });
-        navigate('/gallery');
       }
     );
   };

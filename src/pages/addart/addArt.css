@@ -36,7 +36,7 @@
 }
 .add input::placeholder {
   color: var(--white-color);
-  font-family: 'knickReg';
+
   font-size: 2.6rem;
 }
 .add-subtext {

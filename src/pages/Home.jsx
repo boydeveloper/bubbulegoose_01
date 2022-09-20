@@ -21,10 +21,9 @@ function Home() {
               <div className="grid--3--cols" id="image-container">
                 <Card
                   cards={cards
-                    .slice(0, 6)
-                    .sort(
-                      (a, b) => b.timestamp.toDate() - a.timestamp.toDate()
-                    )}
+
+                    .sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate())
+                    .slice(0, 6)}
                 />
               </div>
               <div className="text-center">
