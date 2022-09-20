@@ -57,6 +57,7 @@
   color: var(--white-color);
   font-family: inherit;
   font-weight: 600;
+  font-family: inherit;
   text-shadow: none;
 }
 .img-box {
@@ -99,7 +100,6 @@
 }
 .precaution-text {
   font-size: 1.9rem;
-
   color: var(--black-color);
 }
 .signup-link:link,
