@@ -20,13 +20,11 @@
 }
 .move-center p {
   font-size: 3rem;
-  font-family: 'knickReg';
   margin-bottom: 5rem;
   color: var(--black-color);
   display: block;
 }
 .form-box label {
-  font-family: 'knickReg';
   margin-bottom: 1rem;
   font-size: 3rem;
   font-weight: 600;
@@ -60,7 +58,6 @@
   font-family: inherit;
   font-weight: 600;
   text-shadow: none;
-  font-family: 'knickReg';
 }
 .img-box {
   padding-top: 2rem;
@@ -102,7 +99,7 @@
 }
 .precaution-text {
   font-size: 1.9rem;
-  font-family: 'knickReg';
+
   color: var(--black-color);
 }
 .signup-link:link,

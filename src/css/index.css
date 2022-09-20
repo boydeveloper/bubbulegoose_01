@@ -14,14 +14,14 @@
   --black-color: #fff;
   --white-color: #120d18;
 }
-@font-face {
+/* @font-face {
   font-family: knickReg;
   src: url('../../font/knickReg.otf');
 }
 @font-face {
   font-family: Knicknack;
   src: url('../../font/Knicknack.otf');
-}
+} */
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -29,7 +29,7 @@ html {
 body {
   background-color: var(--white-color);
   color: var(--black-color);
-  font-family: 'Knicknack', sans-serif;
+  font-family: 'Clash Display', sans-serif;
   font-weight: 400;
   height: 100vh;
   position: relative;
@@ -95,7 +95,6 @@ h1 {
 .align-center {
   text-align: center;
 }
-
 
 .flex {
   display: flex;
