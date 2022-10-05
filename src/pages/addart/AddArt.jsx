@@ -9,15 +9,13 @@ import {
   getDownloadURL,
   uploadBytesResumable,
 } from 'firebase/storage';
-import useGetData from '../../hooks/useGetData';
+
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth } from 'firebase/auth';
 import Preloader from '../../utils/Preloader';
 function AddArt() {
   const [image, setImage] = useState();
-
   const auth = getAuth();
-
   const [handle, setHandle] = useState('');
 
   const [discordId, setDiscordId] = useState(auth.currentUser.displayName);

@@ -33,27 +33,36 @@ body {
   font-family: 'Clash Display', sans-serif;
   font-weight: 400;
   height: 100vh;
-  position: relative;
   overflow-x: hidden;
 }
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 1.5rem;
-  background-color: #dadada;
+  background-color: transparent;
+  background-color: var(--primary-color);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.748);
   border-radius: 5rem;
+}
+::-webkit-scrollbar-button {
+  width: 0.1rem;
+  height: 0.2rem;
 }
 .App {
   background-color: var(--white-color);
 }
-.head {
-  position: relative;
-}
+
 .header {
   background-color: var(--primary-color);
   width: 100%;
-  z-index: -99;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.2rem;
+  max-width: 130rem;
+  height: 9.6rem;
+  z-index: 999;
 }
 .container {
   max-width: 130rem;
@@ -157,7 +166,8 @@ h1 {
   .grid--3--cols {
     grid-template-columns: 1fr;
   }
-  .container {
+  .container,
+  .header {
     padding: 0 2rem;
   }
 }
