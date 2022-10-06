@@ -52,18 +52,6 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--white-color);
 }
 
-.header {
-  background-color: var(--primary-color);
-  width: 100%;
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 3.2rem;
-  max-width: 130rem;
-  height: 9.6rem;
-  z-index: 999;
-}
 .container {
   max-width: 130rem;
   padding: 0 3.2rem;

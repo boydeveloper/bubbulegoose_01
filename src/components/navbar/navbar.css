@@ -1,3 +1,19 @@
+.Navigation {
+  background-color: var(--primary-color);
+}
+.header {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 130rem;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.2rem;
+  height: 9.6rem;
+  z-index: 999;
+}
+
 .nav {
   display: flex;
   align-items: center;
